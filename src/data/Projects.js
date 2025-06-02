@@ -1,6 +1,6 @@
-// src/data/projects.js
+// src/data/Projects.js
 
-export const projects = [
+const Projects = [
   {
     title: 'Real-Time Fraud Detection System',
     description: 'ML-powered system deployed with FastAPI on AWS EC2. ROC AUC: 0.9458, TPR: 97.72%.',
@@ -32,3 +32,5 @@ export const projects = [
     code: 'https://github.com/SG7504/Customer-Support-Dashboard',
   }
 ];
+
+export default Projects;
