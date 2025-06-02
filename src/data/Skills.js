@@ -1,4 +1,4 @@
-const skills = {
+const Skills = {
   Languages: [
     "JavaScript", "React", "Tailwind CSS", "Python", "FastAPI", "AWS", "Git", "SQL"
   ],
@@ -10,4 +10,4 @@ const skills = {
   ]
 };
 
-export default skills;
+export default Skills;
