@@ -1,4 +1,4 @@
-import skills from "../data/skills";
+import skills from "../data/Skills";  // ⬅️ fixed case!
 
 function Skills() {
   return (
