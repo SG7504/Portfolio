@@ -1,5 +1,5 @@
-import { projects } from './data/projects';
-import Projects from './components/Projects'; // ✅ Capital P
+import projects from './data/Projects'; // ✅ Correct import for your data
+import ProjectCard from './components/ProjectCard'; // ✅ Component for rendering each project
 import Skills from './components/Skills';
 import Education from './components/Education';
 import Contact from './components/Contact';
@@ -46,7 +46,7 @@ function App() {
           <h2 className="text-3xl font-bold text-center mb-12">Projects</h2>
           <div className="grid gap-10 md:grid-cols-2">
             {projects.map((project, index) => (
-              <Projects key={index} {...project} />
+              <ProjectCard key={index} {...project} />
             ))}
           </div>
         </section>
