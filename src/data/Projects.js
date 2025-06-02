@@ -1,3 +1,5 @@
+// src/data/projects.js
+
 export const projects = [
   {
     title: 'Real-Time Fraud Detection System',
@@ -30,18 +32,3 @@ export const projects = [
     code: 'https://github.com/SG7504/Customer-Support-Dashboard',
   }
 ];
-
-// Rendering function
-export function renderProjects(containerId) {
-  const container = document.getElementById(containerId);
-  if (!container) return;
-
-  container.innerHTML = projects.map(project => `
-    <div class="project">
-      <div class="project-title">${project.title}</div>
-      <div class="project-stack"><strong>Stack:</strong> ${project.stack.join(', ')}</div>
-      <div class="project-desc">${project.description}</div>
-      <a class="project-link" href="${project.code}" target="_blank">View Code</a>
-    </div>
-  `).join('');
-}
