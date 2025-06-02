@@ -1,4 +1,4 @@
-import contact from "../data/contact";
+import Contact from "../data/Contact";
 
 function Contact() {
   return (
