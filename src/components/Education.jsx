@@ -1,4 +1,4 @@
-import education from "../data/education";
+import education from "../data/Education";
 
 function Education() {
   return (
