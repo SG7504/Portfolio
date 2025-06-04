@@ -10,11 +10,12 @@ function App() {
 
   return (
     <div className="min-h-screen bg-white text-black">
-      <nav className="shadow fixed top-0 w-full z-50 bg-white/80 backdrop-blur">
+      {/* Navbar */}
+      <nav className="fixed top-0 w-full z-50 bg-white/90 backdrop-blur shadow">
         <div className="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
           <h1 className="text-xl font-bold">Sparsh</h1>
 
-          {/* Desktop Menu */}
+          {/* Desktop Links */}
           <ul className="hidden sm:flex space-x-6 text-sm font-medium">
             <li><a href="#home" className="hover:text-[var(--color-accent)]">Home</a></li>
             <li><a href="#projects" className="hover:text-[var(--color-accent)]">Projects</a></li>
@@ -23,14 +24,14 @@ function App() {
             <li><a href="#contact" className="hover:text-[var(--color-accent)]">Contact</a></li>
           </ul>
 
-          {/* Mobile Menu Toggle */}
+          {/* Mobile Toggle Button */}
           <button
             className="sm:hidden focus:outline-none"
             onClick={() => setMenuOpen(!menuOpen)}
             aria-label="Toggle Menu"
           >
             <svg
-              className="w-6 h-6 text-black"
+              className="w-6 h-6"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -55,7 +56,7 @@ function App() {
           </button>
         </div>
 
-        {/* Mobile Menu */}
+        {/* Mobile Links */}
         {menuOpen && (
           <ul className="sm:hidden flex flex-col space-y-2 px-4 pb-4 text-sm font-medium">
             <li><a href="#home" className="hover:text-[var(--color-accent)]">Home</a></li>
@@ -67,6 +68,7 @@ function App() {
         )}
       </nav>
 
+      {/* Main Content with top padding to avoid overlap */}
       <main className="pt-24">
         <header
           id="home"
