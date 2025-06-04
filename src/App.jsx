@@ -13,8 +13,8 @@ function App() {
       {/* Navbar */}
       <nav className="fixed top-0 w-full z-50 bg-white/90 backdrop-blur shadow">
         <div className="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
-          <h1 className="text-xl font-bold">Sparsh</h1>
-
+          {/* Remove the "Sparsh" heading */}
+          
           {/* Desktop Links */}
           <ul className="hidden sm:flex space-x-6 text-sm font-medium">
             <li><a href="#home" className="hover:text-[var(--color-accent)]">Home</a></li>
@@ -68,8 +68,8 @@ function App() {
         )}
       </nav>
 
-      {/* Main Content with top padding to avoid overlap */}
-      <main className="pt-24">
+      {/* Main Content */}
+      <main className="pt-28 sm:pt-24">
         <header
           id="home"
           className="max-w-4xl mx-auto text-center mb-20 border-b border-gray-300 pb-12 px-4"
