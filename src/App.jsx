@@ -15,46 +15,11 @@ function App() {
         <div className="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
           {/* Desktop Links */}
           <ul className="hidden sm:flex space-x-6 text-sm font-medium">
-            <li>
-              <a
-                href="#home"
-                className="hover:text-red-500 active:text-red-600"
-              >
-                Home
-              </a>
-            </li>
-            <li>
-              <a
-                href="#projects"
-                className="hover:text-red-500 active:text-red-600"
-              >
-                Projects
-              </a>
-            </li>
-            <li>
-              <a
-                href="#skills"
-                className="hover:text-red-500 active:text-red-600"
-              >
-                Skills
-              </a>
-            </li>
-            <li>
-              <a
-                href="#education"
-                className="hover:text-red-500 active:text-red-600"
-              >
-                Education
-              </a>
-            </li>
-            <li>
-              <a
-                href="#contact"
-                className="hover:text-red-500 active:text-red-600"
-              >
-                Contact
-              </a>
-            </li>
+            <li><a href="#home" className="hover:text-red-500 active:text-red-600">Home</a></li>
+            <li><a href="#projects" className="hover:text-red-500 active:text-red-600">Projects</a></li>
+            <li><a href="#skills" className="hover:text-red-500 active:text-red-600">Skills</a></li>
+            <li><a href="#education" className="hover:text-red-500 active:text-red-600">Education</a></li>
+            <li><a href="#contact" className="hover:text-red-500 active:text-red-600">Contact</a></li>
           </ul>
 
           {/* Mobile Toggle Button */}
@@ -71,19 +36,9 @@ function App() {
               xmlns="http://www.w3.org/2000/svg"
             >
               {menuOpen ? (
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M6 18L18 6M6 6l12 12"
-                />
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
               ) : (
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M4 6h16M4 12h16M4 18h16"
-                />
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
               )}
             </svg>
           </button>
@@ -92,46 +47,11 @@ function App() {
         {/* Mobile Links */}
         {menuOpen && (
           <ul className="sm:hidden flex flex-col space-y-2 px-4 pb-4 text-sm font-medium">
-            <li>
-              <a
-                href="#home"
-                className="hover:text-red-500 active:text-red-600"
-              >
-                Home
-              </a>
-            </li>
-            <li>
-              <a
-                href="#projects"
-                className="hover:text-red-500 active:text-red-600"
-              >
-                Projects
-              </a>
-            </li>
-            <li>
-              <a
-                href="#skills"
-                className="hover:text-red-500 active:text-red-600"
-              >
-                Skills
-              </a>
-            </li>
-            <li>
-              <a
-                href="#education"
-                className="hover:text-red-500 active:text-red-600"
-              >
-                Education
-              </a>
-            </li>
-            <li>
-              <a
-                href="#contact"
-                className="hover:text-red-500 active:text-red-600"
-              >
-                Contact
-              </a>
-            </li>
+            <li><a href="#home" className="hover:text-red-500 active:text-red-600">Home</a></li>
+            <li><a href="#projects" className="hover:text-red-500 active:text-red-600">Projects</a></li>
+            <li><a href="#skills" className="hover:text-red-500 active:text-red-600">Skills</a></li>
+            <li><a href="#education" className="hover:text-red-500 active:text-red-600">Education</a></li>
+            <li><a href="#contact" className="hover:text-red-500 active:text-red-600">Contact</a></li>
           </ul>
         )}
       </nav>
@@ -168,7 +88,7 @@ function App() {
           id="projects"
           className="pt-28 sm:pt-24 py-20 px-4 sm:px-6 max-w-6xl mx-auto border-b border-gray-300"
         >
-          <h2 className="text-3xl font-bold text-center mb-12">Projects</h2>
+          {/* Removed heading here */}
           <div className="grid gap-10 grid-cols-1 sm:grid-cols-2">
             {projects.map((project, index) => (
               <Projects key={index} {...project} />
@@ -178,7 +98,11 @@ function App() {
 
         <Skills />
         <Education />
-        <Contact />
+
+        {/* Contact section: removed heading */}
+        <section id="contact" className="pt-28 sm:pt-24 px-4 sm:px-6 max-w-6xl mx-auto border-b border-gray-300">
+          <Contact />
+        </section>
       </main>
     </div>
   );
