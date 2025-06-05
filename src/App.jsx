@@ -13,15 +13,48 @@ function App() {
       {/* Navbar */}
       <nav className="fixed top-0 w-full z-50 bg-white/90 backdrop-blur shadow">
         <div className="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
-          {/* Remove the "Sparsh" heading */}
-          
           {/* Desktop Links */}
           <ul className="hidden sm:flex space-x-6 text-sm font-medium">
-            <li><a href="#home" className="hover:text-[var(--color-accent)]">Home</a></li>
-            <li><a href="#projects" className="hover:text-[var(--color-accent)]">Projects</a></li>
-            <li><a href="#skills" className="hover:text-[var(--color-accent)]">Skills</a></li>
-            <li><a href="#education" className="hover:text-[var(--color-accent)]">Education</a></li>
-            <li><a href="#contact" className="hover:text-[var(--color-accent)]">Contact</a></li>
+            <li>
+              <a
+                href="#home"
+                className="hover:text-red-500 active:text-red-600"
+              >
+                Home
+              </a>
+            </li>
+            <li>
+              <a
+                href="#projects"
+                className="hover:text-red-500 active:text-red-600"
+              >
+                Projects
+              </a>
+            </li>
+            <li>
+              <a
+                href="#skills"
+                className="hover:text-red-500 active:text-red-600"
+              >
+                Skills
+              </a>
+            </li>
+            <li>
+              <a
+                href="#education"
+                className="hover:text-red-500 active:text-red-600"
+              >
+                Education
+              </a>
+            </li>
+            <li>
+              <a
+                href="#contact"
+                className="hover:text-red-500 active:text-red-600"
+              >
+                Contact
+              </a>
+            </li>
           </ul>
 
           {/* Mobile Toggle Button */}
@@ -59,11 +92,46 @@ function App() {
         {/* Mobile Links */}
         {menuOpen && (
           <ul className="sm:hidden flex flex-col space-y-2 px-4 pb-4 text-sm font-medium">
-            <li><a href="#home" className="hover:text-[var(--color-accent)]">Home</a></li>
-            <li><a href="#projects" className="hover:text-[var(--color-accent)]">Projects</a></li>
-            <li><a href="#skills" className="hover:text-[var(--color-accent)]">Skills</a></li>
-            <li><a href="#education" className="hover:text-[var(--color-accent)]">Education</a></li>
-            <li><a href="#contact" className="hover:text-[var(--color-accent)]">Contact</a></li>
+            <li>
+              <a
+                href="#home"
+                className="hover:text-red-500 active:text-red-600"
+              >
+                Home
+              </a>
+            </li>
+            <li>
+              <a
+                href="#projects"
+                className="hover:text-red-500 active:text-red-600"
+              >
+                Projects
+              </a>
+            </li>
+            <li>
+              <a
+                href="#skills"
+                className="hover:text-red-500 active:text-red-600"
+              >
+                Skills
+              </a>
+            </li>
+            <li>
+              <a
+                href="#education"
+                className="hover:text-red-500 active:text-red-600"
+              >
+                Education
+              </a>
+            </li>
+            <li>
+              <a
+                href="#contact"
+                className="hover:text-red-500 active:text-red-600"
+              >
+                Contact
+              </a>
+            </li>
           </ul>
         )}
       </nav>
@@ -98,7 +166,7 @@ function App() {
 
         <section
           id="projects"
-          className="py-20 px-4 sm:px-6 max-w-6xl mx-auto border-b border-gray-300"
+          className="pt-28 sm:pt-24 py-20 px-4 sm:px-6 max-w-6xl mx-auto border-b border-gray-300"
         >
           <h2 className="text-3xl font-bold text-center mb-12">Projects</h2>
           <div className="grid gap-10 grid-cols-1 sm:grid-cols-2">
