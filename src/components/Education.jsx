@@ -1,9 +1,13 @@
+<<<<<<< HEAD
 import { motion } from 'framer-motion';
 import education from "../data/education";
 import { FaUniversity, FaChartLine } from "react-icons/fa";
 import { GiGraduateCap } from "react-icons/gi";
 import { LuCalendarDays } from "react-icons/lu";
 import { GoLocation } from "react-icons/go";
+=======
+import education from "../data/Education";
+>>>>>>> a02a0676c48326b9145a40ddaf4739f3526b72be
 
 function Education() {
   return (

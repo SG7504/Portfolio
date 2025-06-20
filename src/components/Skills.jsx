@@ -1,10 +1,15 @@
+<<<<<<< HEAD
 import skills from "../data/Skills";
 import { motion } from "framer-motion";
+=======
+import skills from "../data/Skills"; // Note the capital 'S' here
+>>>>>>> a02a0676c48326b9145a40ddaf4739f3526b72be
 
 function Skills() {
   return (
     <section
       id="skills"
+<<<<<<< HEAD
       className="py-20 px-4 sm:px-6 max-w-4xl mx-auto border-b border-gray-300 dark:border-gray-700"
       aria-labelledby="skills-heading"
     >
@@ -50,6 +55,22 @@ function Skills() {
                   role="listitem"
                   tabIndex={0} // Make each skill focusable
                   aria-label={`Skill: ${skill}`}
+=======
+      className="py-20 px-4 sm:px-6 max-w-6xl mx-auto border-b border-gray-300 dark:border-gray-700"
+    >
+      <h2 className="text-3xl font-bold text-center mb-12">Skills</h2>
+      <div className="grid md:grid-cols-3 gap-8">
+        {Object.entries(skills).map(([category, items], index) => (
+          <div key={index}>
+            <h3 className="text-xl font-semibold mb-4 text-blue-600 dark:text-blue-400">
+              {category}
+            </h3>
+            <ul className="space-y-2">
+              {items.map((skill, i) => (
+                <li
+                  key={i}
+                  className="bg-gray-100 dark:bg-gray-800 px-4 py-2 rounded-md text-gray-800 dark:text-gray-200"
+>>>>>>> a02a0676c48326b9145a40ddaf4739f3526b72be
                 >
                   {skill}
                 </motion.li>
