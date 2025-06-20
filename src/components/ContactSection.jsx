@@ -1,0 +1,137 @@
+import { useState, useRef } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { FaEnvelope, FaGithub, FaLinkedin } from "react-icons/fa";
+
+export default function ContactSection() {
+  const [copied, setCopied] = useState(false);
+  const liveRegionRef = useRef(null);
+
+  const handleCopy = (e) => {
+    e.preventDefault();
+    navigator.clipboard.writeText("sparshguha4057@gmail.com").then(() => {
+      setCopied(true);
+      if (liveRegionRef.current) {
+        liveRegionRef.current.textContent = "Email copied to clipboard!";
+        setTimeout(() => {
+          setCopied(false);
+          if (liveRegionRef.current) liveRegionRef.current.textContent = "";
+        }, 2000);
+      }
+    });
+    // Do not redirect to mailto automatically for accessibility
+    // window.location.href = "mailto:sparshguha4057@gmail.com";
+  };
+
+  return (
+    <motion.section
+      id="contact"
+      className="flex flex-col justify-center items-center px-4 py-20 bg-zinc-900 text-white"
+      initial={{ opacity: 0, y: 30 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6 }}
+      aria-labelledby="contact-heading"
+      role="region"
+    >
+      {/* Visually hidden live region for announcements */}
+      <div
+        ref={liveRegionRef}
+        aria-live="polite"
+        aria-atomic="true"
+        style={{
+          position: "absolute",
+          left: "-9999px",
+          width: "1px",
+          height: "1px",
+          overflow: "hidden",
+        }}
+      />
+
+      <div className="bg-white/5 backdrop-blur-md rounded-2xl shadow-xl p-10 w-full max-w-2xl text-center border border-white/10">
+        <h2
+          id="contact-heading"
+          className="text-4xl font-bold mb-4"
+          tabIndex={0}
+        >
+          Let's Connect
+        </h2>
+        <p className="text-lg mb-10 text-zinc-300">
+          Click an icon to reach out or view my resume below.
+        </p>
+
+        <nav
+          className="flex justify-center gap-14 mb-6"
+          aria-label="Contact methods"
+        >
+          <motion.button
+            type="button"
+            onClick={handleCopy}
+            aria-label="Copy email address to clipboard"
+            className="text-cyan-400 hover:text-red-500 transition-transform text-[3.5rem] bg-transparent border-none focus:outline-none focus:ring-2 focus:ring-cyan-400 rounded"
+            whileHover={{ scale: 1.25 }}
+            animate={{ y: [0, -6, 0] }}
+            transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
+            tabIndex={0}
+          >
+            <FaEnvelope aria-hidden="true" focusable="false" />
+          </motion.button>
+
+          <motion.a
+            href="https://github.com/SG7504"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="GitHub profile (opens in new tab)"
+            className="text-cyan-400 hover:text-red-500 transition-transform text-[3.5rem] focus:outline-none focus:ring-2 focus:ring-cyan-400 rounded"
+            whileHover={{ scale: 1.25 }}
+            animate={{ y: [0, -6, 0] }}
+            transition={{ repeat: Infinity, duration: 2.2, ease: "easeInOut" }}
+            tabIndex={0}
+          >
+            <FaGithub aria-hidden="true" focusable="false" />
+          </motion.a>
+
+          <motion.a
+            href="https://www.linkedin.com/in/sparshguha75/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="LinkedIn profile (opens in new tab)"
+            className="text-cyan-400 hover:text-red-500 transition-transform text-[3.5rem] focus:outline-none focus:ring-2 focus:ring-cyan-400 rounded"
+            whileHover={{ scale: 1.25 }}
+            animate={{ y: [0, -6, 0] }}
+            transition={{ repeat: Infinity, duration: 2.4, ease: "easeInOut" }}
+            tabIndex={0}
+          >
+            <FaLinkedin aria-hidden="true" focusable="false" />
+          </motion.a>
+        </nav>
+
+        {/* Live announcement for clipboard copy */}
+        <AnimatePresence>
+          {copied && (
+            <motion.div
+              key="copied"
+              className="text-green-400 mt-2 text-sm font-medium"
+              initial={{ opacity: 0, y: 5 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -5 }}
+              transition={{ duration: 0.3 }}
+              role="status"
+              aria-live="polite"
+            >
+              Email copied to clipboard!
+            </motion.div>
+          )}
+        </AnimatePresence>
+
+        <a
+          href="https://drive.google.com/file/d/1lG9lbAbShlpNkfapearw97irjEgLiWSt/view?usp=drive_link"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-block mt-10 px-6 py-3 bg-red-600 text-white rounded-xl hover:bg-red-700 transition focus:outline-none focus:ring-2 focus:ring-red-400"
+          aria-label="View resume (opens in new tab)"
+        >
+          View Resume
+        </a>
+      </div>
+    </motion.section>
+  );
+}

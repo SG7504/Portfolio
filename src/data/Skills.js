@@ -1,13 +1,16 @@
 const Skills = {
-  Languages: [
-    "JavaScript", "React", "Tailwind CSS", "Python", "FastAPI", "AWS", "Git", "SQL"
-  ],
-  Tools: [
-    "VS Code", "Postman", "Google Colab", "AWS EC2/S3", "FastAPI", "Docker", "Tailwind", "React"
-  ],
-  Cybersecurity: [
-    "Wireshark", "Burp Suite", "Metasploit", "Secure Computing", "Penetration Testing"
-  ]
+  "Languages & Frameworks": [
+    "JavaScript", "Python", "Java", "C", "C#", "HTML", "CSS", "PHP", "SQL", "Bash", "React", "Tailwind", "FastAPI"
+  ],
+  "Tools & Platforms": [
+    "VS Code", "GitHub", "Postman", "Google Colab", "Docker", "AWS EC2/S3"
+  ],
+  "Machine Learning": [
+    "scikit-learn", "TensorFlow", "Pandas", "NumPy", "OpenCV", "XGBoost", "Random Forest", "YOLO", "LightBGM"
+  ],
+  "Cybersecurity": [
+    "Wireshark", "Burp Suite", "Metasploit", "Penetration Testing", "Kali Linux"
+  ]
 };
 
 export default Skills;
