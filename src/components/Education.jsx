@@ -1,13 +1,9 @@
-<<<<<<< HEAD
 import { motion } from 'framer-motion';
-import education from "../data/education";
+import education from "../data/education"; // Single import
 import { FaUniversity, FaChartLine } from "react-icons/fa";
 import { GiGraduateCap } from "react-icons/gi";
 import { LuCalendarDays } from "react-icons/lu";
 import { GoLocation } from "react-icons/go";
-=======
-import education from "../data/Education";
->>>>>>> a02a0676c48326b9145a40ddaf4739f3526b72be
 
 function Education() {
   return (
@@ -20,8 +16,9 @@ function Education() {
       <h2 
         id="education-heading"
         className="text-3xl font-bold text-center mb-12 text-white"
-        tabIndex={0} // Make focusable for screen readers
+        tabIndex={0}
       >
+        Education
       </h2>
 
       <div className="space-y-12" role="list">
@@ -35,7 +32,7 @@ function Education() {
             className="bg-zinc-800 rounded-xl p-6 shadow-md hover:shadow-xl transition duration-300"
             aria-labelledby={`school-${index}`}
             role="listitem"
-            tabIndex={0} // Make each card focusable
+            tabIndex={0}
           >
             {/* School */}
             <div className="flex items-center gap-2 text-zinc-300 mb-1">
@@ -43,7 +40,7 @@ function Education() {
               <h3 
                 id={`school-${index}`}
                 className="text-xl font-semibold"
-      aria-label={`School: ${edu.School}`}
+                aria-label={`School: ${edu.School}`}
               >
                 {edu.School}
               </h3>
