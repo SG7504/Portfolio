@@ -10,7 +10,6 @@ export default function EducationPage() {
           tabIndex={0}
           aria-label="Education page"
         >
-          Education
         </h1>
         <Education />
       </main>

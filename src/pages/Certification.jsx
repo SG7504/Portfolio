@@ -13,7 +13,7 @@ export default function Certification() {
           tabIndex={0}
           id="certifications-heading"
         >
-          Certifications
+          
         </h1>
         <div 
           aria-labelledby="certifications-heading"

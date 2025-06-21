@@ -82,7 +82,7 @@ function Navbar() {
             <div className="flex items-center justify-between w-full md:w-auto min-h-[40px]">
               <Link to="/" className="flex items-center gap-2 min-h-[40px]">
                 <img
-                  src="/logo.svg"
+                  src={`${import.meta.env.BASE_URL}logo.svg`}
                   alt="Sparsh Guha logo"
                   className="h-7 w-7 sm:h-8 sm:w-8 hover:scale-105 transition-transform duration-300"
                 />

@@ -1,4 +1,3 @@
-// CertificationList.jsx
 import { motion } from 'framer-motion';
 import { ExternalLink } from 'lucide-react';
 
@@ -9,6 +8,13 @@ export default function CertificationList({ certifications }) {
       aria-label="Certifications"
       role="region"
     >
+      {/* Add this section title */}
+      <h2 
+        className="text-2xl sm:text-3xl font-extrabold text-center mb-10 text-blue-400"
+        tabIndex={0}
+      >
+        Certifications
+      </h2>
       <div className="grid grid-cols-1 gap-4" role="list">
         {certifications.map((cert, idx) => {
           const uniqueId = `cert-${idx}`;
