@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;900&display=swap');
+
 /* Tailwind base */
 @tailwind base;
 @tailwind components;
@@ -141,8 +143,6 @@ html {
 }
 
 /* Heading enhancements */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;900&display=swap');
-
 h2 {
   letter-spacing: 0.05em;
   font-weight: 900;
