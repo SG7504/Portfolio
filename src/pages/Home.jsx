@@ -40,7 +40,7 @@ export default function Home() {
           transition={{ delay: 0.2 }}
           tabIndex={0}
         >
-          Building intelligent software at the intersection of{" "}
+              Building intelligent software at the intersection of{" "}
           <span className="text-blue-400 font-semibold">AI</span>,{" "}
           <span className="text-pink-400 font-semibold">React</span>, and{" "}
           <span className="text-yellow-400 font-semibold">Cybersecurity</span>.
