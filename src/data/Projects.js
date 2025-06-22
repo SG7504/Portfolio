@@ -3,7 +3,7 @@ const projects = [
     title: 'Personal Portfolio Website',
     description:
       'Responsive and accessible portfolio built with React, TailwindCSS, and Framer Motion. Features smooth page transitions, interactive animations, dark mode, and screen reader support (tested with NVDA). Deployed on Vercel with 99.9% uptime.',
-    stack: ['React', 'TailwindCSS', 'Framer Motion', 'Vercel'],
+    stack: ['React', 'TailwindCSS', 'Framer Motion', 'Github Pages'],
     code: 'https://github.com/yourusername/portfolio-site',
   },
   {
