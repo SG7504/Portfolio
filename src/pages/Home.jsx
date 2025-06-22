@@ -24,7 +24,7 @@ export default function Home() {
       >
         {/* Hero Section */}
         <motion.h1
-          className="text-5xl sm:text-6xl font-extrabold mb-4 leading-tight text-center pl-2"
+          className="text-5xl sm:text-6xl font-extrabold mb-4 leading-tight text-center pl-4"
           initial={{ opacity: 0, y: -30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
@@ -34,7 +34,7 @@ export default function Home() {
         </motion.h1>
 
         <motion.p
-          className="text-xl sm:text-2xl text-gray-300 max-w-2xl mb-8 text-center mx-auto pl-2"
+          className="text-xl sm:text-2xl text-gray-300 max-w-2xl mb-8 text-center mx-auto pl-4"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.2 }}
@@ -47,8 +47,8 @@ export default function Home() {
         </motion.p>
 
         {/* Navigation Buttons */}
-        <nav aria-label="Main navigation" className="flex flex-wrap gap-4 mb-10 pl-2">
-          {["projects", "skills", "education", "certifications", "contact"].map((route) => (
+        <nav aria-label="Main navigation" className="flex flex-wrap gap-4 mb-10 pl-4">
+          {['projects', 'skills', 'education', 'certifications', 'contact'].map((route) => (
             <motion.button
               key={route}
               onClick={() => navigate(`/${route}`)}
@@ -70,7 +70,7 @@ export default function Home() {
           aria-hidden="true"
         />
 
-        {/* About Section (NO extra padding) */}
+        {/* About Section (no extra padding) */}
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -90,7 +90,7 @@ export default function Home() {
         />
 
         {/* Social Icons */}
-        <nav aria-label="Social links" className="flex gap-6 mt-6 items-center text-xl pl-2">
+        <nav aria-label="Social links" className="flex flex-col md:flex-row gap-6 mt-6 items-center justify-center text-xl pl-4">
           <motion.a
             href="#"
             onClick={handleCopyEmail}
@@ -143,7 +143,7 @@ export default function Home() {
           href="https://drive.google.com/file/d/1lG9lbAbShlpNkfapearw97irjEgLiWSt/view?usp=drive_link"
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-block mt-10 px-6 py-3 bg-teal-600 rounded-xl hover:bg-teal-700 transition shadow-lg hover:shadow-teal-400/50 focus:outline-none focus:ring-2 focus:ring-teal-400 pl-2"
+          className="inline-block mt-10 px-6 py-3 bg-teal-600 rounded-xl hover:bg-teal-700 transition shadow-lg hover:shadow-teal-400/50 focus:outline-none focus:ring-2 focus:ring-teal-400 pl-4"
           whileHover={{ scale: 1.05 }}
           aria-label="View my resume (opens in a new tab)"
         >
