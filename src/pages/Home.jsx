@@ -24,7 +24,7 @@ export default function Home() {
       >
         {/* Hero Section */}
         <motion.h1
-          className="text-5xl sm:text-6xl font-extrabold mb-4 leading-tight"
+          className="text-5xl sm:text-6xl font-extrabold mb-4 leading-tight text-center"
           initial={{ opacity: 0, y: -30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
@@ -34,13 +34,13 @@ export default function Home() {
         </motion.h1>
 
         <motion.p
-          className="text-xl sm:text-2xl text-gray-300 max-w-2xl mb-8"
+          className="text-xl sm:text-2xl text-gray-300 max-w-2xl mb-8 text-center"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.2 }}
           tabIndex={0}
         >
-              Building intelligent software at the intersection of{" "}
+          Building intelligent software at the intersection of{" "}
           <span className="text-blue-400 font-semibold">AI</span>,{" "}
           <span className="text-pink-400 font-semibold">React</span>, and{" "}
           <span className="text-yellow-400 font-semibold">Cybersecurity</span>.
