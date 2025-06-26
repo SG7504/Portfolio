@@ -1,12 +1,103 @@
-# React + Vite
+# Sparsh Guha – Portfolio Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome! This repository contains the source code for my professional portfolio website, built to showcase my projects, skills, certifications, and educational background.
 
-Currently, two official plugins are available:
+🌐 **Live Site:**  
+[https://sg7504.github.io/Portfolio/](https://sg7504.github.io/Portfolio/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## 🚀 Features
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- Modern, responsive design with React and Vite
+- Clean, accessible UI using Tailwind CSS
+- Smooth animations with Framer Motion
+- Interactive navigation and clear sectioning
+- Showcases projects in AI, Cybersecurity, Blockchain, and more
+- Easy access to resume and social profiles
+
+---
+
+## 🛠️ Tech Stack
+
+- React 19
+- Vite
+- Tailwind CSS
+- Framer Motion
+- React Router DOM
+- GitHub Pages (deployment)
+
+---
+
+## 📦 Getting Started
+
+**Clone the repository:**
+git clone https://github.com/SG7504/Portfolio.git
+cd Portfolio
+
+
+text
+
+**Install dependencies:**
+npm install
+
+
+text
+
+**Run locally:**
+npm run dev
+
+
+text
+
+**Build for production:**
+npm run build
+
+
+text
+
+**Deploy to GitHub Pages:**
+npm run deploy
+
+
+text
+
+---
+
+## 📂 Folder Structure
+
+Portfolio/
+├── public/
+│ └── logo.svg
+├── src/
+│ ├── components/
+│ ├── pages/
+│ ├── data/
+│ ├── App.jsx
+│ └── main.jsx
+├── package.json
+├── vite.config.js
+└── ...
+
+
+text
+
+---
+
+## 👤 Author
+
+**Sparsh Guha**  
+- [Portfolio Website](https://sg7504.github.io/Portfolio/)
+- [LinkedIn](https://www.linkedin.com/in/sparshguha75/)
+- [GitHub](https://github.com/SG7504)
+
+---
+
+## 📄 License
+
+All rights reserved. This portfolio website is the personal property of Sparsh Guha.
+
+---
+
+Thank you for visiting my portfolio repository!  
+Feel free to explore the code, and connect with me on [LinkedIn](https://www.linkedin.com/in/sparshguha75/) or through my [portfolio site](https://sg7504.github.io/Portfolio/).
