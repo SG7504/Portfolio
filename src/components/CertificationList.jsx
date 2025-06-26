@@ -1,105 +1,139 @@
-import { motion } from 'framer-motion';
-import { ExternalLink } from 'lucide-react';
+import { useState, useRef } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { FaEnvelope, FaGithub, FaLinkedin } from "react-icons/fa";
+import Contact from "../data/Contact";
 
-export default function CertificationList({ certifications }) {
+export default function ContactSection() {
+  const [copied, setCopied] = useState(false);
+  const liveRegionRef = useRef(null);
+
+  const handleCopy = (e) => {
+    e.preventDefault();
+    navigator.clipboard.writeText(Contact.email).then(() => {
+      setCopied(true);
+      if (liveRegionRef.current) {
+        liveRegionRef.current.textContent = "Email copied to clipboard!";
+        setTimeout(() => {
+          setCopied(false);
+          if (liveRegionRef.current) liveRegionRef.current.textContent = "";
+        }, 2000);
+      }
+    });
+  };
+
   return (
-    <section
-      className="w-full px-4 sm:px-8 py-10 max-w-3xl mx-auto overflow-x-hidden box-border"
-      aria-label="Certifications"
+    <motion.section
+      id="contact"
+      className="flex flex-col justify-center items-center px-2 py-8 bg-zinc-900 text-white"
+      initial={{ opacity: 0, y: 30 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6 }}
+      aria-labelledby="contact-heading"
       role="region"
+      style={{ minHeight: "100vh" }}
     >
-      {/* Add this section title */}
-      <h2 
-        className="text-2xl sm:text-3xl font-extrabold text-center mb-10 text-blue-400"
-        tabIndex={0}
-      >
-        Certifications
-      </h2>
-      <div className="grid grid-cols-1 gap-4" role="list">
-        {certifications.map((cert, idx) => {
-          const uniqueId = `cert-${idx}`;
-          return (
-            <motion.article
-              key={`${cert.title}-${cert.issuer}-${idx}`}
-              className="bg-zinc-800/90 backdrop-blur p-4 rounded-xl shadow-lg border border-zinc-700 flex flex-col h-full transition-all relative"
-              initial={{ opacity: 0, scale: 0.98 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              whileHover={{
-                scale: 1.03,
-                borderColor: '#14b8a6',
-                boxShadow: '0 8px 24px -6px rgba(20,184,166,0.15), 0 2px 8px 0 rgba(0,0,0,0.10)',
-                zIndex: 10,
-              }}
-              transition={{
-                duration: 0.28,
-                ease: [0.25, 1, 0.5, 1],
-              }}
-              viewport={{ once: true, margin: '-60px' }}
-              role="listitem"
-              aria-labelledby={`${uniqueId}-title`}
-              aria-describedby={`${uniqueId}-details`}
-              tabIndex={0}
-              style={{ zIndex: 1 }}
+      {/* Visually hidden live region for announcements */}
+      <div
+        ref={liveRegionRef}
+        aria-live="polite"
+        aria-atomic="true"
+        style={{
+          position: "absolute",
+          left: "-9999px",
+          width: "1px",
+          height: "1px",
+          overflow: "hidden",
+        }}
+      />
+
+      {/* Compact white box with more spacing and less padding */}
+      <div className="bg-white/5 backdrop-blur-md rounded-2xl shadow-xl p-6 w-full max-w-xl text-center border border-white/10 flex flex-col space-y-4">
+        <h2
+          id="contact-heading"
+          className="text-3xl font-bold"
+          tabIndex={0}
+        >
+          Let's Connect
+        </h2>
+        <p className="text-base text-zinc-300">
+          Click an icon to reach out or view my resume below.
+        </p>
+
+        <nav
+          className="flex justify-center gap-10"
+          aria-label="Contact methods"
+        >
+          <motion.button
+            type="button"
+            onClick={handleCopy}
+            aria-label="Copy email address to clipboard"
+            className="text-cyan-400 hover:text-red-500 transition-transform text-[2.5rem] bg-transparent border-none focus:outline-none focus:ring-2 focus:ring-cyan-400 rounded"
+            whileHover={{ scale: 1.15 }}
+            animate={{ y: [0, -4, 0] }}
+            transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
+            tabIndex={0}
+          >
+            <FaEnvelope aria-hidden="true" focusable="false" />
+          </motion.button>
+
+          <motion.a
+            href={Contact.github}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="GitHub profile (opens in new tab)"
+            className="text-cyan-400 hover:text-red-500 transition-transform text-[2.5rem] focus:outline-none focus:ring-2 focus:ring-cyan-400 rounded"
+            whileHover={{ scale: 1.15 }}
+            animate={{ y: [0, -4, 0] }}
+            transition={{ repeat: Infinity, duration: 2.2, ease: "easeInOut" }}
+            tabIndex={0}
+          >
+            <FaGithub aria-hidden="true" focusable="false" />
+          </motion.a>
+
+          <motion.a
+            href={Contact.linkedin}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="LinkedIn profile (opens in new tab)"
+            className="text-cyan-400 hover:text-red-500 transition-transform text-[2.5rem] focus:outline-none focus:ring-2 focus:ring-cyan-400 rounded"
+            whileHover={{ scale: 1.15 }}
+            animate={{ y: [0, -4, 0] }}
+            transition={{ repeat: Infinity, duration: 2.4, ease: "easeInOut" }}
+            tabIndex={0}
+          >
+            <FaLinkedin aria-hidden="true" focusable="false" />
+          </motion.a>
+        </nav>
+
+        {/* Live announcement for clipboard copy */}
+        <AnimatePresence>
+          {copied && (
+            <motion.div
+              key="copied"
+              className="text-green-400 text-sm font-medium"
+              initial={{ opacity: 0, y: 5 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -5 }}
+              transition={{ duration: 0.3 }}
+              role="status"
+              aria-live="polite"
             >
-              <header className="flex flex-col items-start">
-                <h3 
-                  id={`${uniqueId}-title`} 
-                  className="text-base font-bold mb-2 text-teal-300 leading-tight break-words"
-                >
-                  {cert.title}
-                </h3>
-                <div className="text-xs text-zinc-400 font-medium mb-1">
-                  <span className="text-zinc-300 sr-only">Issued by: </span>
-                  <span aria-hidden="true">Company:</span> {cert.issuer}
-                </div>
-                <div className="text-xs text-zinc-400 mb-3">
-                  <span className="text-zinc-300 sr-only">Date earned: </span>
-                  <span aria-hidden="true">Date:</span> {cert.date}
-                </div>
-              </header>
+              Email copied to clipboard!
+            </motion.div>
+          )}
+        </AnimatePresence>
 
-              <div 
-                id={`${uniqueId}-details`}
-                className="mb-3"
-              >
-                <h4 className="sr-only">Credential Details</h4>
-                <ul 
-                  className="text-xs text-zinc-200 list-disc pl-5 space-y-1"
-                  role="list"
-                  aria-label="Credential details"
-                >
-                  {cert.credential.split(',').map((item, idx2) => (
-                    <li 
-                      key={`item-${idx2}`}
-                      role="listitem"
-                      aria-label={item.trim()}
-                    >
-                      {item.trim()}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              {cert.link && (
-                <a
-                  href={cert.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={`View credential for ${cert.title} (opens in new tab)`}
-                  className="mt-auto inline-flex items-center gap-1.5 text-teal-400 hover:text-teal-300 hover:underline text-xs font-medium transition group break-all focus:outline-none focus:ring-2 focus:ring-teal-400 focus:rounded"
-                >
-                  View Credential
-                  <ExternalLink
-                    size={13}
-                    className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"
-                    aria-hidden="true"
-                  />
-                </a>
-              )}
-            </motion.article>
-          );
-        })}
+        {/* Resume Button - less margin, more compact */}
+        <a
+          href={Contact.resume}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-block px-5 py-2 bg-red-600 text-white rounded-xl hover:bg-red-700 transition focus:outline-none focus:ring-2 focus:ring-red-400 text-base font-semibold mt-2"
+          aria-label="View resume (opens in new tab)"
+        >
+          View Resume
+        </a>
       </div>
-    </section>
+    </motion.section>
   );
 }

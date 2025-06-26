@@ -1,6 +1,7 @@
 import { useState, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaEnvelope, FaGithub, FaLinkedin } from "react-icons/fa";
+import Contact from "../data/Contact";
 
 export default function ContactSection() {
   const [copied, setCopied] = useState(false);
@@ -8,7 +9,7 @@ export default function ContactSection() {
 
   const handleCopy = (e) => {
     e.preventDefault();
-    navigator.clipboard.writeText("sparshguha4057@gmail.com").then(() => {
+    navigator.clipboard.writeText(Contact.email).then(() => {
       setCopied(true);
       if (liveRegionRef.current) {
         liveRegionRef.current.textContent = "Email copied to clipboard!";
@@ -18,8 +19,6 @@ export default function ContactSection() {
         }, 2000);
       }
     });
-    // Do not redirect to mailto automatically for accessibility
-    // window.location.href = "mailto:sparshguha4057@gmail.com";
   };
 
   return (
@@ -76,7 +75,7 @@ export default function ContactSection() {
           </motion.button>
 
           <motion.a
-            href="https://github.com/SG7504"
+            href={Contact.github}
             target="_blank"
             rel="noopener noreferrer"
             aria-label="GitHub profile (opens in new tab)"
@@ -90,7 +89,7 @@ export default function ContactSection() {
           </motion.a>
 
           <motion.a
-            href="https://www.linkedin.com/in/sparshguha75/"
+            href={Contact.linkedin}
             target="_blank"
             rel="noopener noreferrer"
             aria-label="LinkedIn profile (opens in new tab)"
@@ -123,7 +122,7 @@ export default function ContactSection() {
         </AnimatePresence>
 
         <a
-          href="https://drive.google.com/file/d/1lG9lbAbShlpNkfapearw97irjEgLiWSt/view?usp=drive_link"
+          href={Contact.resume}
           target="_blank"
           rel="noopener noreferrer"
           className="inline-block mt-10 px-6 py-3 bg-red-600 text-white rounded-xl hover:bg-red-700 transition focus:outline-none focus:ring-2 focus:ring-red-400"
