@@ -1,26 +1,33 @@
-<!-- public/logo.svg -->
 <svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <rect width="100" height="100" rx="20" fill="#0F172A"/>
-  
   <defs>
     <linearGradient id="techGradient" x1="0" y1="0" x2="100" y2="100" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#0ff" />
-      <stop offset="1" stop-color="#00f6ff" />
+      <stop stop-color="#2a6cff" />      <!-- Deep blue -->
+      <stop offset="1" stop-color="#00c6ff" /> <!-- Lighter blue-cyan -->
     </linearGradient>
-
     <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
-      <feDropShadow dx="0" dy="0" stdDeviation="4" flood-color="#00f6ff" />
+      <feDropShadow dx="0" dy="0" stdDeviation="4" flood-color="#00c6ff" />
     </filter>
   </defs>
 
   <!-- Animated Stroke Outline -->
-  <path d="M15 50 C15 30, 85 30, 85 50 C85 70, 15 70, 15 50 Z" stroke="url(#techGradient)" stroke-width="2" fill="none">
+  <path d="M15 50 C15 30, 85 30, 85 50 C85 70, 15 70, 15 50 Z"
+    stroke="url(#techGradient)"
+    stroke-width="2"
+    fill="none">
     <animate attributeName="stroke-dashoffset" values="100;0" dur="2s" repeatCount="indefinite" />
     <animate attributeName="stroke-dasharray" values="0,100;100,0" dur="2s" repeatCount="indefinite" />
   </path>
 
   <!-- Monogram Letters -->
-  <text x="50%" y="55%" text-anchor="middle" fill="url(#techGradient)" font-size="36" font-family="Consolas, monospace" font-weight="bold" dy=".3em" filter="url(#glow)">
+  <text
+    x="50%" y="55%" text-anchor="middle"
+    fill="url(#techGradient)"
+    font-size="36"
+    font-family="Consolas, monospace"
+    font-weight="bold"
+    dy=".3em"
+    filter="url(#glow)"
+  >
     SG
   </text>
 </svg>
