@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Mail, Github, Linkedin } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import Layout from "../components/Layout";
+import Contact from "../data/Contact";
 
 export default function Home() {
   const [copied, setCopied] = useState(false);
@@ -79,15 +80,16 @@ export default function Home() {
         </section>
         {/* Resume CTA */}
         <a
-          href="https://drive.google.com/file/d/1XR5PbxP3lyQAJL_8ZDDJzS1u2bVmSqBt/view?usp=sharing"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="mt-1 mb-3 text-xl font-bold text-teal-400 underline underline-offset-4 hover:text-teal-300 transition text-center"
-          aria-label="View my resume (opens in a new tab)"
-          style={{ letterSpacing: "0.01em" }}
-        >
-          📄 View My Resume
-        </a>
+  href={Contact.resume}
+  target="_blank"
+  rel="noopener noreferrer"
+  className="mt-1 mb-3 text-xl font-bold text-teal-400 underline underline-offset-4 hover:text-teal-300 transition text-center"
+  aria-label="View my resume (opens in a new tab)"
+  style={{ letterSpacing: "0.01em" }}
+>
+  📄 View My Resume
+</a>
+
         {/* Divider - No gap above */}
         <hr className="border-gray-700 mt-0 mb-1 w-full" aria-hidden="true" />
 
