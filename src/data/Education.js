@@ -4,7 +4,7 @@ const education = [
     Degree: "B.Tech in Computer Science Engineering",
     Year: "2022 – 2026",
     Location: "Bhubaneswar, India",
-    GPA: "8.02 / 10 CGPA",
+    GPA: "8.12 / 10 CGPA",
     Achievements: [
       "Runner Up in Hyperthon (GFG KIIT)",
       "Certificate of Distinction (GO4 OLYMPIAD)",
