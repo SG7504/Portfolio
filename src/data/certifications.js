@@ -1,53 +1,38 @@
 const certifications = [
   {
-    title: "AWS Academy Graduate - Cloud Architecting",
-    issuer: "Amazon Web Services (AWS)",
-    date: "Jun 2025",
-    credential: "Cloud-Native Architecture, Cloud Security, AWS",
-    link: "https://www.credly.com/badges/your-badge-link-architecting" // Replace with real link
+    title: "Tata Group – Data Visualisation Job Simulation",
+    issuer: "Tata Group (Forage)",
+    date: "2024",
+    credential: "Data Visualization, Business Insights",
+    link: import.meta.env.BASE_URL + "certificates/tata-data-visualisation.pdf"
   },
   {
-    title: "AWS Academy Graduate - Machine Learning Foundations",
-    issuer: "Amazon Web Services (AWS)",
-    date: "Mar 2025",
-    credential: "Machine Learning, Python, AWS",
-    link: "https://www.credly.com/badges/your-badge-link-ml" // Replace with real link
+    title: "JPMorgan Chase – Cybersecurity Job Simulation",
+    issuer: "JPMorgan Chase & Co. (Forage)",
+    date: "Jun 2024",
+    credential: "Access Control, Email Security, Application Security",
+    link: import.meta.env.BASE_URL + "certificates/jpmorgan-cybersecurity.pdf"
+  },
+  {
+    title: "API Beginner Learning Path",
+    issuer: "Postman",
+    date: "Aug 2024",
+    credential: "APIs, Postman, API Testing",
+    link: import.meta.env.BASE_URL + "certificates/postman-api.pdf"
+  },
+  {
+    title: "Prompt Engineering for ChatGPT",
+    issuer: "Coursera / DeepLearning.AI",
+    date: "2024",
+    credential: "Prompt Engineering, LLMs",
+    link: import.meta.env.BASE_URL + "certificates/prompt-engineering.pdf"
   },
   {
     title: "Google Cybersecurity Specialization",
     issuer: "Coursera / Google",
     date: "Sep 2023",
-    credential: "Cybersecurity, TCP/IP, SIEM, Python, SQL, NIST",
-    link: "https://coursera.org/verify/DQY4LNANQTCP"
-  },
-  {
-    title: "Certified in Cybersecurity",
-    issuer: "ISC2",
-    date: "Aug 2024",
-    credential: "Cyber Defense, CTI, Secure Computing",
-    link: "https://www.your-isc2-cert-link.com" // Add real one
-  },
- 
-  {
-    title: "Cybersecurity Job Simulation",
-    issuer: "JPMorgan Chase & Co. (Forage)",
-    date: "Jun 2024",
-    credential: "Access Control, Email Security, Application Security",
-    link: "https://forage-credential-link"
-  },
-  {
-    title: "Postman API Beginner Path",
-    issuer: "Postman",
-    date: "Aug 2024",
-    credential: "Postman, API Testing",
-    link: "https://www.postman.com/collections/your-id"
-  },
-  {
-    title: "DSA Alpha 2.0 (Java)",
-    issuer: "Apna College",
-    date: "May 2023",
-    credential: "DSA, Java, Problem Solving",
-    link: "https://www.apnacollege.in/verify/your-id"
+    credential: "Cybersecurity, SIEM, Python, SQL, NIST",
+    link: import.meta.env.BASE_URL + "certificates/google-cybersecurity.pdf"
   }
 ];
 
