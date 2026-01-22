@@ -1,8 +1,8 @@
-import certifications from "../data/Projects";
-import CertificationList from "../components/ProjectCard";
 import Layout from "../components/Layout";
+import ProjectCard from "../components/ProjectCard";
+import projects from "../data/Projects";
 
-export default function ProjectCard() {
+export default function Projects() {
   return (
     <Layout>
       <section className="min-h-screen px-6 py-12 max-w-6xl mx-auto text-white">
@@ -10,7 +10,11 @@ export default function ProjectCard() {
           Projects
         </h2>
 
-        <ProjectCard Projects={Projects} />
+        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          {projects.map((project, index) => (
+            <ProjectCard key={index} project={project} />
+          ))}
+        </div>
       </section>
     </Layout>
   );
