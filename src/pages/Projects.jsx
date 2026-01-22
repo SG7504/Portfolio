@@ -12,7 +12,14 @@ export default function Projects() {
 
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {projects.map((project, index) => (
-            <ProjectCard key={index} project={project} />
+            <ProjectCard
+              key={index}
+              index={index}
+              title={project.title}
+              description={project.description}
+              stack={project.stack}
+              code={project.code}
+            />
           ))}
         </div>
       </section>
