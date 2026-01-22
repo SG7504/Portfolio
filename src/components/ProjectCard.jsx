@@ -5,7 +5,6 @@ import { ExternalLink } from "lucide-react";
 export default function ProjectCard({ title, description, stack, code, index }) {
   const liveRegionRef = useRef(null);
 
-  // Utility to announce card content
   const announceCard = () => {
     if (liveRegionRef.current) {
       liveRegionRef.current.textContent =
