@@ -9,7 +9,7 @@ const Skills = {
     "scikit-learn", "TensorFlow", "Pandas", "NumPy", "XGBoost", "Random Forest", "YOLO", "LightBGM"
   ],
   "Cybersecurity": [
-    "Wireshark", "Kali Linux", "Secure Computing", "SIEM Tools"
+    "Wireshark", "Kali Linux", "Secure Computing", "SIEM Tools", "Linux"
   ]
 };
 
