@@ -13,8 +13,8 @@ function Navbar() {
 
   const navLinks = [
     { to: "/", label: "Home" },
-    { to: "/experience", label: "Experience" },
     { to: "/projects", label: "Projects" },
+    { to: "/experience", label: "Experience" },
     { to: "/skills", label: "Skills" },
     { to: "/education", label: "Education" },
     { to: "/certifications", label: "Certifications" },
