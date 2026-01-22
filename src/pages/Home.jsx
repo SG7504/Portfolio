@@ -48,7 +48,7 @@ export default function Home() {
   aria-label="Main navigation"
   className="flex flex-wrap gap-2 mb-2"
 >
-  {["projects", "skills", "education", "certifications", "contact"].map(
+  {["projects", "experience", "skills", "education", "certifications", "contact"].map(
     (route) => (
       <button
         key={route}
