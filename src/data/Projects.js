@@ -27,20 +27,6 @@ const projects = [
     stack: ['Machine Learning', 'Google Colab', 'Python'],
     code: 'https://github.com/SG7504/GFGKIIT-Wanderers-Hyperthon',
   },
-  {
-    title: 'Support Ticket System (C#)',
-    description:
-      'Basic console-based application built in C# to simulate a support ticket workflow. Implements object-oriented design with classes for ticket creation, assignment, and status tracking. Designed for learning core OOP principles and C# syntax.',
-    stack: ['GitHub', 'C#'],
-    code: 'https://github.com/SG7504/Ticket-System',
-  },
-  {
-    title: 'Customer Support Dashboard',
-    description:
-      'Static frontend dashboard built with HTML, CSS, and JavaScript to display and organize mock customer support tickets. Focused on layout structure, responsive design, and UI hierarchy. Used as a UI prototype in early-stage development.',
-    stack: ['HTML5', 'CSS3', 'JavaScript'],
-    code: 'https://github.com/SG7504/Customer-Support-Dashboard',
-  },
 ];
 
 export default projects;
