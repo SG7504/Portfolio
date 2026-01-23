@@ -74,16 +74,21 @@ export default function ProjectCard({ title, description, stack, code, index }) 
           </p>
 
           {/* Tech Stack Pills */}
-          <div className="flex flex-wrap mt-2 mb-4">
-  {stack.map((tech, i) => (
-    <span
-      key={i}
-      className="mr-2 mb-2 inline-block bg-zinc-700 text-zinc-100 text-xs px-3 py-1 rounded-full shadow-sm hover:bg-teal-600 transition whitespace-nowrap"
-    >
-      {tech}
-    </span>
-  ))}
+          <div className="mt-2 mb-4">
+  <p className="text-sm text-zinc-400 mb-2">Tech Stack:</p>
+  <ul className="flex flex-col gap-1">
+    {stack.map((tech, i) => (
+      <li
+        key={i}
+        className="text-sm text-zinc-300 flex items-center gap-2"
+      >
+        <span className="w-1.5 h-1.5 rounded-full bg-teal-400" />
+        {tech}
+      </li>
+    ))}
+  </ul>
 </div>
+
 
 
 
