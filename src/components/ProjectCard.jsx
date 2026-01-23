@@ -76,7 +76,7 @@ export default function ProjectCard({ title, description, stack, code, index }) 
           {/* Tech Stack */}
           <ul className="flex flex-wrap gap-2 mb-4" aria-label="Technology stack">
             {stack.map((tech, i) => (
-              <li key={i}>
+              <li key={i} className="inline-block">
                 <span className="bg-zinc-700 text-zinc-100 text-xs px-3 py-1 rounded-full shadow-sm hover:bg-teal-600 transition">
                   {tech}
                 </span>
