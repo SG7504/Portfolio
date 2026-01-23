@@ -1,6 +1,6 @@
 import { useRef } from "react";
 import { motion } from "framer-motion";
-import { ExternalLink } from "lucide-react";
+import { ExternalLink, Award } from "lucide-react";
 
 export default function CertificationList({ certifications }) {
   return (
@@ -15,7 +15,6 @@ export default function CertificationList({ certifications }) {
 function CertificationCard({ cert, index }) {
   const liveRegionRef = useRef(null);
 
-  // Utility to announce card content (same pattern as ProjectCard)
   const announceCard = () => {
     if (liveRegionRef.current) {
       liveRegionRef.current.textContent =
@@ -46,7 +45,7 @@ function CertificationCard({ cert, index }) {
       />
 
       <motion.article
-        className="bg-zinc-800 p-6 rounded-2xl shadow-lg border border-zinc-700"
+        className="bg-zinc-800 p-6 rounded-2xl shadow-lg border border-zinc-700 relative"
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         whileHover={{ scale: 1.04, borderColor: "#14b8a6" }}
@@ -58,7 +57,7 @@ function CertificationCard({ cert, index }) {
         tabIndex={0}
         onFocus={announceCard}
         onClick={announceCard}
-        onKeyDown={e => {
+        onKeyDown={(e) => {
           if (e.key === "Enter" || e.key === " ") {
             announceCard();
             const link = e.currentTarget.querySelector("a");
@@ -66,22 +65,24 @@ function CertificationCard({ cert, index }) {
           }
         }}
       >
+        {/* Title */}
         <h3
           id={`cert-title-${index}`}
-          className="text-2xl font-semibold mb-2 text-white"
+          className="text-2xl font-semibold mb-4 text-white"
         >
           {cert.title}
         </h3>
 
+        {/* Issuer & Details */}
         <section
           id={`cert-desc-${index}`}
-          className="mb-4 bg-zinc-700/40 rounded-xl p-4"
+          className="bg-zinc-700/40 rounded-xl p-4"
         >
           <h4 className="text-lg font-semibold mb-2 text-teal-400">
             Issuer & Details
           </h4>
 
-          <p className="text-sm text-zinc-300 mb-2">
+          <p className="text-sm text-zinc-300 mb-1">
             {cert.issuer}
           </p>
 
@@ -90,23 +91,26 @@ function CertificationCard({ cert, index }) {
           </p>
 
           {cert.credential && (
-            <p className="text-xs text-zinc-400">
+            <p className="text-xs text-zinc-400 mb-3">
               Credential ID: {cert.credential}
             </p>
           )}
-        </section>
 
-        {cert.link && (
-          <a
-            href={cert.link}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-1 text-teal-400 hover:text-white hover:underline text-sm font-medium transition"
-            aria-label="View credential"
-          >
-            View Credential <ExternalLink size={14} aria-hidden="true" />
-          </a>
-        )}
+          {/* Credential Button — inside content, under details */}
+          {cert.link && (
+            <a
+              href={cert.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg border border-zinc-600 text-sm text-teal-400 hover:text-white hover:border-teal-400 hover:bg-teal-500/10 transition"
+              aria-label="View credential"
+            >
+              <Award size={16} aria-hidden="true" />
+              View Credential
+              <ExternalLink size={14} aria-hidden="true" />
+            </a>
+          )}
+        </section>
       </motion.article>
     </>
   );
