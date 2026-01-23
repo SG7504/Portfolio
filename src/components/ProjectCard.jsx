@@ -11,7 +11,6 @@ export default function ProjectCard({ title, description, stack, code, index }) 
         `${title}. ${description}. Skills: ${stack.join(", ")}.` +
         (code ? " Code link available." : "");
 
-      // Clear after a short delay so repeated focus works
       setTimeout(() => {
         if (liveRegionRef.current) liveRegionRef.current.textContent = "";
       }, 2000);
@@ -20,7 +19,7 @@ export default function ProjectCard({ title, description, stack, code, index }) 
 
   return (
     <>
-      {/* Visually hidden live region for screen reader announcements */}
+      {/* Visually hidden live region for announcements */}
       <div
         ref={liveRegionRef}
         aria-live="polite"
@@ -35,7 +34,7 @@ export default function ProjectCard({ title, description, stack, code, index }) 
       />
 
       <motion.article
-        className="bg-zinc-800 p-6 rounded-2xl shadow-lg border border-zinc-700 relative overflow-hidden"
+        className="bg-zinc-800 p-6 rounded-2xl shadow-lg border border-zinc-700 relative"
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         whileHover={{ scale: 1.04, borderColor: "#14b8a6" }}
@@ -61,8 +60,8 @@ export default function ProjectCard({ title, description, stack, code, index }) 
           {title}
         </h3>
 
-        {/* Description + Skills Section */}
-        <section className="mb-6 bg-zinc-700/40 rounded-xl p-4">
+        {/* Description + Skills */}
+        <section className="bg-zinc-700/40 rounded-xl p-4">
           <h4 className="text-lg font-semibold mb-2 text-teal-400">
             Skills and Description
           </h4>
@@ -74,7 +73,8 @@ export default function ProjectCard({ title, description, stack, code, index }) 
             {description}
           </p>
 
-          <ul className="flex flex-wrap gap-2" aria-label="Technology stack">
+          {/* Tech Stack */}
+          <ul className="flex flex-wrap gap-2 mb-4" aria-label="Technology stack">
             {stack.map((tech, i) => (
               <li key={i}>
                 <span className="bg-zinc-700 text-zinc-100 text-xs px-3 py-1 rounded-full shadow-sm hover:bg-teal-600 transition">
@@ -83,11 +83,9 @@ export default function ProjectCard({ title, description, stack, code, index }) 
               </li>
             ))}
           </ul>
-        </section>
 
-        {/* Footer / Action Row */}
-        {code && (
-          <div className="mt-4 pt-4 border-t border-zinc-700 flex justify-end">
+          {/* View Code Link — RIGHT BELOW TECH STACK */}
+          {code && (
             <a
               href={code}
               target="_blank"
@@ -97,8 +95,8 @@ export default function ProjectCard({ title, description, stack, code, index }) 
             >
               View Code <ExternalLink size={14} aria-hidden="true" />
             </a>
-          </div>
-        )}
+          )}
+        </section>
       </motion.article>
     </>
   );
