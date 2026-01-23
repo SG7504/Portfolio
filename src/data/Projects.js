@@ -19,7 +19,7 @@ const projects = [
       "LightGBM",
       "scikit-learn",
     ],
-    code: "https://github.com/SG7504/<YOUR_EEG_REPO>",
+    code: "https://github.com/SG7504/EEG-Based-Dementia-Classification-System",
   },
   {
     title: "Dragon’s Vault Discord Bot",
