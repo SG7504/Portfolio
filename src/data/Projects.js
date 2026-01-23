@@ -29,7 +29,7 @@ const projects = [
     code: "https://github.com/SG7504/Discord-Bot-DV",
   },
   {
-    title: "Offline Subtitle Translator",
+    title: "Speech-To-Text-Offline-Subtitle-Generator",
     description:
       "Implemented an offline SRT subtitle translation pipeline using machine learning models, preserving original timestamps and processing 200–300 lines per minute. Achieved over 85% translation accuracy and reduced multi-step manual effort by 60% without requiring internet connectivity.",
     stack: ["Python", "Machine Learning", "NLP", "Google Colab"],
