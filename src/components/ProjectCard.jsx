@@ -1,6 +1,6 @@
 import { useRef } from "react";
 import { motion } from "framer-motion";
-import { ExternalLink } from "lucide-react";
+import { ExternalLink, Github } from "lucide-react";
 
 export default function ProjectCard({ title, description, stack, code, index }) {
   const liveRegionRef = useRef(null);
@@ -73,28 +73,35 @@ export default function ProjectCard({ title, description, stack, code, index }) 
             {description}
           </p>
 
-          {/* Tech Stack */}
-          <ul className="flex flex-wrap gap-2 mb-4" aria-label="Technology stack">
+          {/* Tech Stack Pills */}
+          <ul
+            className="flex flex-wrap gap-2 mb-4"
+            aria-label="Technology stack"
+          >
             {stack.map((tech, i) => (
-              <li key={i} className="inline-block">
-                <span className="bg-zinc-700 text-zinc-100 text-xs px-3 py-1 rounded-full shadow-sm hover:bg-teal-600 transition">
+              <li key={i} className="inline-flex">
+                <span className="bg-zinc-700 text-zinc-100 text-xs px-3 py-1 rounded-full shadow-sm hover:bg-teal-600 transition whitespace-nowrap">
                   {tech}
                 </span>
               </li>
             ))}
           </ul>
 
-          {/* View Code Link — RIGHT BELOW TECH STACK */}
+          {/* Repo Button (under tech stack, icon style) */}
           {code && (
-            <a
-              href={code}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-teal-400 hover:text-white text-sm font-medium transition"
-              aria-label="View project code"
-            >
-              View Code <ExternalLink size={14} aria-hidden="true" />
-            </a>
+            <div className="mt-2">
+              <a
+                href={code}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg border border-zinc-600 text-sm text-teal-400 hover:text-white hover:border-teal-500 hover:bg-zinc-800 transition"
+                aria-label="View project repository"
+              >
+                <Github size={16} aria-hidden="true" />
+                View Code
+                <ExternalLink size={14} aria-hidden="true" />
+              </a>
+            </div>
           )}
         </section>
       </motion.article>
