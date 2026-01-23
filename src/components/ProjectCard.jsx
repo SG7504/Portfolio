@@ -74,15 +74,17 @@ export default function ProjectCard({ title, description, stack, code, index }) 
           </p>
 
           {/* Tech Stack Pills */}
-          <ul className="flex flex-wrap mb-4" aria-label="Technology stack">
+          <div className="flex flex-wrap mt-2 mb-4">
   {stack.map((tech, i) => (
-    <li key={i} className="mr-2 mb-2">
-      <span className="inline-block bg-zinc-700 text-zinc-100 text-xs px-3 py-1 rounded-full shadow-sm hover:bg-teal-600 transition whitespace-nowrap">
-        {tech}
-      </span>
-    </li>
+    <span
+      key={i}
+      className="mr-2 mb-2 inline-block bg-zinc-700 text-zinc-100 text-xs px-3 py-1 rounded-full shadow-sm hover:bg-teal-600 transition whitespace-nowrap"
+    >
+      {tech}
+    </span>
   ))}
-</ul>
+</div>
+
 
 
           {/* Repo Button (under tech stack, icon style) */}
