@@ -45,11 +45,18 @@ function CertificationCard({ cert, index }) {
       />
 
       <motion.article
-        className="bg-zinc-800 p-6 rounded-2xl shadow-lg border border-zinc-700 relative"
+        className="bg-zinc-800 p-6 rounded-2xl shadow-lg border border-zinc-700 relative transition-shadow"
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
-        whileHover={{ scale: 1.04, borderColor: "#14b8a6" }}
-        transition={{ duration: 0.3, ease: "easeInOut" }}
+
+        /* 🔥 SUBTLE PREMIUM HOVER — SAME AS PROJECTS */
+        whileHover={{
+          scale: 1.015,
+          borderColor: "#14b8a6",
+          boxShadow: "0 0 0 1px rgba(20,184,166,0.4), 0 10px 25px rgba(0,0,0,0.4)",
+        }}
+
+        transition={{ duration: 0.25, ease: "easeOut" }}
         viewport={{ once: true }}
         role="article"
         aria-labelledby={`cert-title-${index}`}
@@ -96,13 +103,13 @@ function CertificationCard({ cert, index }) {
             </p>
           )}
 
-          {/* Credential Button — inside content, under details */}
+          {/* Credential Button */}
           {cert.link && (
             <a
               href={cert.link}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg border border-zinc-600 text-sm text-teal-400 hover:text-white hover:border-teal-400 hover:bg-teal-500/10 transition"
+              className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg border border-zinc-600 text-sm text-teal-400 hover:text-white hover:border-teal-500 hover:bg-zinc-800 transition"
               aria-label="View credential"
             >
               <Award size={16} aria-hidden="true" />
