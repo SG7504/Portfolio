@@ -9,21 +9,20 @@ function Education() {
   return (
     <section
       id="education"
-      className="py-16 px-6 max-w-6xl mx-auto"
+      className="py-20 px-6 max-w-6xl mx-auto"
       aria-labelledby="education-heading"
       role="region"
     >
       {/* Section Title */}
       <h2
         id="education-heading"
-        className="text-4xl font-bold text-center mb-12 text-white"
-        tabIndex={0}
+        className="text-4xl font-bold text-center mb-14 text-white"
       >
         Education
       </h2>
 
-      {/* Cards container — same rhythm as Projects */}
-      <div className="grid gap-10">
+      {/* Cards container (same rhythm as Projects) */}
+      <div className="grid gap-12">
         {education.map((edu, index) => (
           <motion.article
             key={index}
@@ -32,42 +31,37 @@ function Education() {
             whileHover={{ scale: 1.03, borderColor: "#14b8a6" }}
             transition={{ duration: 0.3, ease: "easeInOut" }}
             viewport={{ once: true }}
-            className="bg-zinc-800 rounded-2xl p-8 shadow-lg border border-zinc-700 max-w-3xl mx-auto"
-            aria-labelledby={`school-${index}`}
-            role="listitem"
+            className="bg-zinc-800 rounded-2xl p-8 shadow-lg border border-zinc-700 max-w-4xl mx-auto"
             tabIndex={0}
           >
             {/* School */}
-            <div className="flex items-center gap-3 text-zinc-200 mb-3">
-              <FaUniversity className="text-teal-400 text-lg" aria-hidden="true" />
-              <h3
-                id={`school-${index}`}
-                className="text-2xl font-semibold"
-              >
+            <div className="flex items-center gap-3 text-zinc-200 mb-4">
+              <FaUniversity className="text-teal-400 text-xl" />
+              <h3 className="text-2xl font-semibold">
                 {edu.School}
               </h3>
             </div>
 
-            {/* Meta info block */}
-            <div className="space-y-2 mb-4">
+            {/* Meta info */}
+            <div className="space-y-2 mb-6">
               <div className="flex items-center gap-3 text-zinc-400 text-sm">
-                <GiGraduateCap aria-hidden="true" />
+                <GiGraduateCap />
                 <span>{edu.Degree}</span>
               </div>
 
               <div className="flex items-center gap-3 text-zinc-400 text-sm">
-                <LuCalendarDays aria-hidden="true" />
+                <LuCalendarDays />
                 <span>{edu.Year}</span>
               </div>
 
               <div className="flex items-center gap-3 text-zinc-400 text-sm">
-                <GoLocation aria-hidden="true" />
+                <GoLocation />
                 <span>{edu.Location}</span>
               </div>
 
               {edu.GPA && (
                 <div className="flex items-center gap-3 text-zinc-400 text-sm">
-                  <FaChartLine aria-hidden="true" />
+                  <FaChartLine />
                   <span>{edu.GPA}</span>
                 </div>
               )}
@@ -75,7 +69,7 @@ function Education() {
 
             {/* Achievements */}
             {edu.Achievements && edu.Achievements.length > 0 && (
-              <div className="mt-6 bg-zinc-700/40 rounded-xl p-5">
+              <div className="bg-zinc-700/40 rounded-xl p-5">
                 <h4 className="mb-3 font-semibold text-teal-400">
                   Achievements
                 </h4>
