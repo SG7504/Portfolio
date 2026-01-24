@@ -9,13 +9,13 @@ function Education() {
   return (
     <section
       id="education"
-      className="py-20 px-4 sm:px-6 max-w-5xl mx-auto"
+      className="py-20 px-4 sm:px-6 max-w-6xl mx-auto"
       aria-labelledby="education-heading"
       role="region"
     >
       <h2
         id="education-heading"
-        className="text-3xl font-bold text-center mb-12 text-white"
+        className="text-4xl font-bold text-center mb-12 text-white"
         tabIndex={0}
       >
         Education
@@ -30,7 +30,7 @@ function Education() {
             whileHover={{ scale: 1.03, borderColor: "#14b8a6" }}
             transition={{ duration: 0.3, ease: "easeInOut" }}
             viewport={{ once: true }}
-            className="bg-zinc-800 rounded-2xl p-6 shadow-lg border border-zinc-700"
+            className="bg-zinc-800 rounded-2xl p-8 shadow-lg border border-zinc-700"
             aria-labelledby={`school-${index}`}
             role="listitem"
             tabIndex={0}
