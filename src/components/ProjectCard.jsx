@@ -34,11 +34,18 @@ export default function ProjectCard({ title, description, stack, code, index }) 
       />
 
       <motion.article
-        className="bg-zinc-800 p-6 rounded-2xl shadow-lg border border-zinc-700 relative"
+        className="bg-zinc-800 p-6 rounded-2xl shadow-lg border border-zinc-700 relative transition-shadow"
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
-        whileHover={{ scale: 1.04, borderColor: "#14b8a6" }}
-        transition={{ duration: 0.3, ease: "easeInOut" }}
+
+        /* 🔥 SUBTLE HOVER — SAME AS EXPERIENCE / EDUCATION */
+        whileHover={{
+          scale: 1.015,
+          borderColor: "#14b8a6",
+          boxShadow: "0 0 0 1px rgba(20,184,166,0.4), 0 10px 25px rgba(0,0,0,0.4)",
+        }}
+
+        transition={{ duration: 0.25, ease: "easeOut" }}
         viewport={{ once: true }}
         role="article"
         aria-labelledby={`project-title-${index}`}
@@ -73,26 +80,23 @@ export default function ProjectCard({ title, description, stack, code, index }) 
             {description}
           </p>
 
-          {/* Tech Stack Pills */}
+          {/* Tech Stack */}
           <div className="mt-2 mb-4">
-  <p className="text-sm text-zinc-400 mb-2">Tech Stack:</p>
-  <ul className="flex flex-col gap-1">
-    {stack.map((tech, i) => (
-      <li
-        key={i}
-        className="text-sm text-zinc-300 flex items-center gap-2"
-      >
-        <span className="w-1.5 h-1.5 rounded-full bg-teal-400" />
-        {tech}
-      </li>
-    ))}
-  </ul>
-</div>
+            <p className="text-sm text-zinc-400 mb-2">Tech Stack:</p>
+            <ul className="flex flex-col gap-1">
+              {stack.map((tech, i) => (
+                <li
+                  key={i}
+                  className="text-sm text-zinc-300 flex items-center gap-2"
+                >
+                  <span className="w-1.5 h-1.5 rounded-full bg-teal-400" />
+                  {tech}
+                </li>
+              ))}
+            </ul>
+          </div>
 
-
-
-
-          {/* Repo Button (under tech stack, icon style) */}
+          {/* Repo Button */}
           {code && (
             <div className="mt-2">
               <a
