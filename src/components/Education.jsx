@@ -50,58 +50,41 @@ function Education() {
             {/* Degree */}
             <div className="flex items-center gap-2 text-zinc-400 text-sm mb-1">
               <GiGraduateCap aria-hidden="true" />
-              <span aria-label={`Degree: ${edu.Degree}`}>
-                {edu.Degree}
-              </span>
+              <span>{edu.Degree}</span>
             </div>
 
             {/* Year */}
             <div className="flex items-center gap-2 text-zinc-400 text-sm mb-1">
               <LuCalendarDays aria-hidden="true" />
-              <span aria-label={`Years attended: ${edu.Year}`}>
-                {edu.Year}
-              </span>
+              <span>{edu.Year}</span>
             </div>
 
             {/* Location */}
             <div className="flex items-center gap-2 text-zinc-400 text-sm mb-1">
               <GoLocation aria-hidden="true" />
-              <span aria-label={`Location: ${edu.Location}`}>
-                {edu.Location}
-              </span>
+              <span>{edu.Location}</span>
             </div>
 
             {/* GPA */}
             {edu.GPA && (
               <div className="flex items-center gap-2 text-zinc-400 text-sm mb-2">
                 <FaChartLine aria-hidden="true" />
-                <span aria-label={`GPA: ${edu.GPA}`}>
-                  {edu.GPA}
-                </span>
+                <span>{edu.GPA}</span>
               </div>
             )}
 
             {/* Achievements */}
             {edu.Achievements && edu.Achievements.length > 0 && (
               <div className="mt-4 bg-zinc-700/40 rounded-xl p-4">
-                <h4
-                  className="mb-2 font-medium text-teal-400"
-                  id={`achievements-${index}`}
-                >
+                <h4 className="mb-2 font-medium text-teal-400">
                   Achievements
                 </h4>
 
-                <ul
-                  className="space-y-2 text-zinc-200"
-                  aria-labelledby={`achievements-${index}`}
-                  role="list"
-                >
+                <ul className="space-y-2 text-zinc-200">
                   {edu.Achievements.map((ach, i) => (
                     <li
                       key={i}
                       className="flex items-start gap-2 hover:text-teal-400 transition"
-                      role="listitem"
-                      aria-label={`Achievement: ${ach}`}
                     >
                       <span className="w-1.5 h-1.5 mt-2 rounded-full bg-teal-400" />
                       {ach}
