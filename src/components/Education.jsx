@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import education from "../data/Education";
+import education from "../data/Education.js";
 import { FaUniversity, FaChartLine } from "react-icons/fa";
 import { GiGraduateCap } from "react-icons/gi";
 import { LuCalendarDays } from "react-icons/lu";
