@@ -22,7 +22,7 @@ function Education() {
       </h2>
 
       <div className="space-y-10" role="list">
-        {education.map((edu, index) => (
+       {Array.isArray(education) && education.map((edu, index) => (
           <motion.article
             key={index}
             initial={{ opacity: 0, y: 30 }}
