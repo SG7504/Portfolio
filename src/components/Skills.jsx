@@ -5,57 +5,69 @@ function Skills() {
   return (
     <section
       id="skills"
-      className="py-20 px-4 sm:px-6 max-w-4xl mx-auto border-b border-gray-300 dark:border-gray-700"
+      className="py-20 px-4 sm:px-6 max-w-6xl mx-auto"
       aria-labelledby="skills-heading"
+      role="region"
     >
-      <motion.h2
+      <h2
         id="skills-heading"
-        className="text-4xl font-bold text-center mb-16 text-gray-900 dark:text-white"
-        initial={{ opacity: 0, y: -30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
+        className="text-4xl font-bold text-center mb-16 text-white"
         tabIndex={0}
       >
         Skills & Technologies
-      </motion.h2>
+      </h2>
 
-      <div className="space-y-12">
+      {/* Grid of Skill Categories */}
+      <div className="grid gap-8 sm:grid-cols-2">
         {Object.entries(skills).map(([category, items], index) => (
-          <motion.div
+          <motion.article
             key={index}
+            initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
-            initial={{ opacity: 0, y: 20 }}
-            transition={{ duration: 0.6, delay: index * 0.1 }}
             viewport={{ once: true }}
-            role="region"
+
+            /* 🔥 SAME PREMIUM HOVER SYSTEM */
+            whileHover={{
+              scale: 1.015,
+              borderColor: "#14b8a6",
+              boxShadow:
+                "0 0 0 1px rgba(20,184,166,0.4), 0 10px 25px rgba(0,0,0,0.4)",
+            }}
+
+            transition={{ duration: 0.25, ease: "easeOut" }}
+            className="bg-zinc-800 p-6 rounded-2xl shadow-lg border border-zinc-700 transition-shadow"
+            role="article"
             aria-labelledby={`category-${index}`}
+            tabIndex={0}
           >
-            <h3 
+            {/* Category Title */}
+            <h3
               id={`category-${index}`}
-              className="text-2xl font-semibold text-blue-600 dark:text-blue-400 mb-4 border-b border-gray-300 dark:border-gray-600 pb-2"
+              className="text-2xl font-semibold mb-4 text-teal-400"
             >
               {category}
             </h3>
 
-            <ul 
-              className="space-y-2 pl-4"
+            {/* Skills List */}
+            <ul
+              className="space-y-2"
               role="list"
               aria-label={`${category} skills`}
             >
               {items.map((skill, i) => (
-                <motion.li
+                <li
                   key={i}
-                  whileHover={{ scale: 1.02, x: 6 }}
-                  className="bg-gray-100 dark:bg-zinc-800 px-4 py-2 rounded-md text-gray-900 dark:text-gray-100 shadow-sm transition-all cursor-default hover:bg-blue-100 dark:hover:bg-blue-600 hover:text-blue-800 dark:hover:text-white"
+                  className="flex items-center gap-2 text-sm text-zinc-300"
                   role="listitem"
                   tabIndex={0}
                   aria-label={`Skill: ${skill}`}
                 >
+                  <span className="w-1.5 h-1.5 rounded-full bg-teal-400" />
                   {skill}
-                </motion.li>
+                </li>
               ))}
             </ul>
-          </motion.div>
+          </motion.article>
         ))}
       </div>
     </section>
