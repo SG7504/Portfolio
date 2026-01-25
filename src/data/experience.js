@@ -4,6 +4,7 @@ const experience = [
     company: "Deccan AI Experts",
     date: "Nov 2025 – Present",
     location: "Remote",
+    logo: import.meta.env.BASE_URL + "logos/deccan-ai.jpg",
     points: [
       "Selected for Project Bluebird to perform high-accuracy model alignment and RLHF evaluation on production LLM systems.",
       "Evaluated large-scale LLM outputs to identify logical hallucinations, reasoning errors, and safety risks.",
@@ -16,6 +17,7 @@ const experience = [
     company: "GirlScript Summer of Code (GSSOC)",
     date: "May 2024 – Aug 2024",
     location: "Remote",
+    logo: import.meta.env.BASE_URL + "logos/gssoc.jpg",
     points: [
       "Contributed to open-source projects by identifying bugs and implementing feature enhancements in large codebases.",
       "Worked with Git and GitHub workflows including forking, branching, pull requests, and code reviews.",
