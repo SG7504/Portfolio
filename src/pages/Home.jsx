@@ -110,7 +110,6 @@ export default function Home() {
             Email copied!
           </div>
         )}
-        >
       </main>
     </Layout>
   );
