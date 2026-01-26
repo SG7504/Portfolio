@@ -53,10 +53,11 @@ export default function Home() {
             About Me
           </h2>
           <p className="text-zinc-300 leading-relaxed">
-            I’m a B.Tech Computer Science student at KIIT University, passionate about
-            backend systems, machine learning, and cybersecurity. I enjoy building
-            reliable, secure applications and working on real-world ML-driven systems.
-          </p>
+  I’m a Computer Science undergraduate at KIIT University focused on backend engineering,
+  machine learning, and applied cybersecurity. I enjoy building scalable, secure systems and
+  working on real-world ML-driven applications.
+</p>
+
         </section>
 
         {/* Resume CTA */}
