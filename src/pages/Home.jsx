@@ -17,126 +17,94 @@ export default function Home() {
 
   return (
     <Layout>
-      <main
-        className="min-h-screen bg-zinc-900 text-white px-4 py-5 max-w-5xl mx-auto flex flex-col items-center"
-        aria-label="Homepage main content"
-        style={{ minHeight: "100vh" }}
-      >
-        {/* Hero Section */}
-        <h1
-          className="text-4xl sm:text-5xl font-extrabold mb-2 leading-tight text-center"
-          tabIndex={0}
-        >
+      <main className="min-h-screen bg-zinc-900 text-white px-6 py-16 max-w-5xl mx-auto flex flex-col items-center">
+        
+        {/* Hero */}
+        <h1 className="text-4xl sm:text-5xl font-extrabold mb-4 text-center">
           Hey, I’m <span className="text-teal-400">Sparsh</span>{" "}
-          <span aria-label="waving hand emoji" role="img">
-            👋
-          </span>
+          <span role="img" aria-label="waving hand">👋</span>
         </h1>
 
-        <p
-          className="text-lg sm:text-xl text-gray-300 max-w-2xl mb-2 text-center"
-          tabIndex={0}
-        >
+        <p className="text-lg sm:text-xl text-zinc-300 max-w-2xl mb-8 text-center leading-relaxed">
           Building software at the intersection of{" "}
           <span className="text-blue-400 font-semibold">AI</span>,{" "}
-          <span className="text-pink-400 font-semibold">React</span>, and{" "}
+          <span className="text-pink-400 font-semibold">Backend</span>, and{" "}
           <span className="text-yellow-400 font-semibold">Cybersecurity</span>.
         </p>
 
-        {/* Navigation Buttons */}
-<nav
-  aria-label="Main navigation"
-  className="flex flex-wrap gap-2 mb-2"
->
-  {["projects", "experience", "skills", "education", "certifications", "contact"].map(
-    (route) => (
-      <button
-        key={route}
-        onClick={() => navigate(`/${route}`)}
-        className="px-2 py-1 bg-teal-700 rounded text-white hover:bg-teal-600 transition focus:outline-none focus:ring-2 focus:ring-teal-400 text-sm border border-zinc-800 shadow"
-        aria-label={`Go to ${route.charAt(0).toUpperCase() + route.slice(1)} page`}
-      >
-        {route.charAt(0).toUpperCase() + route.slice(1)}
-      </button>
-    )
-  )}
-</nav>
+        {/* Navigation Pills */}
+        <nav className="flex flex-wrap gap-3 mb-10 justify-center">
+          {["projects", "experience", "skills", "education", "certifications", "contact"].map(
+            (route) => (
+              <button
+                key={route}
+                onClick={() => navigate(`/${route}`)}
+                className="px-4 py-2 rounded-full bg-zinc-800 border border-zinc-700 text-sm text-zinc-200 hover:border-teal-400 hover:text-teal-400 transition"
+              >
+                {route.charAt(0).toUpperCase() + route.slice(1)}
+              </button>
+            )
+          )}
+        </nav>
 
-        {/* Divider */}
-        <hr className="border-gray-700 mb-0 mt-0 w-full" aria-hidden="true" />
-
-        {/* About Section - Compact, No Extra Margin */}
-        <section
-          className="max-w-4xl mx-auto text-center p-0 m-0"
-          aria-labelledby="about-heading"
-          tabIndex={-1}
-        >
-          <h2 id="about-heading" className="text-2xl font-bold m-0 p-0 leading-tight">
+        {/* About Card */}
+        <section className="bg-zinc-800 border border-zinc-700 rounded-2xl p-6 max-w-3xl text-center shadow-lg mb-8">
+          <h2 className="text-2xl font-bold mb-3 text-white">
             About Me
           </h2>
-          <p className="text-gray-400 dark:text-gray-300 text-base m-0 p-0 leading-tight">
-            I’m a B.Tech Computer Science student at KIIT University, passionate about full-stack web development, machine learning, and cybersecurity. I enjoy building responsive, secure applications and love collaborating on innovative tech projects.
+          <p className="text-zinc-300 leading-relaxed">
+            I’m a B.Tech Computer Science student at KIIT University, passionate about
+            backend systems, machine learning, and cybersecurity. I enjoy building
+            reliable, secure applications and working on real-world ML-driven systems.
           </p>
         </section>
+
         {/* Resume CTA */}
         <a
-  href={Contact.resume}
-  target="_blank"
-  rel="noopener noreferrer"
-  className="mt-1 mb-3 text-xl font-bold text-teal-400 underline underline-offset-4 hover:text-teal-300 transition text-center"
-  aria-label="View my resume (opens in a new tab)"
-  style={{ letterSpacing: "0.01em" }}
->
-  📄 View My Resume
-</a>
-
-        {/* Divider - No gap above */}
-        <hr className="border-gray-700 mt-0 mb-1 w-full" aria-hidden="true" />
-
-        {/* Social Icons - Footer, Tighter Spacing */}
-        <nav
-          aria-label="Social links"
-          className="flex gap-3 mt-1 mb-2 items-center text-base justify-center"
+          href={Contact.resume}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="mb-8 text-lg font-semibold text-teal-400 hover:text-teal-300 underline underline-offset-4 transition"
         >
+          📄 View My Resume
+        </a>
+
+        {/* Social Links */}
+        <nav className="flex gap-6 items-center text-lg justify-center mb-4">
           <a
             href="#"
             onClick={handleCopyEmail}
-            className="relative hover:text-teal-400 transition focus:outline-none focus:ring-2 focus:ring-teal-400"
-            aria-label="Copy email address to clipboard"
-            tabIndex={0}
-            role="button"
-            onKeyDown={(e) => {
-              if (e.key === "Enter" || e.key === " ") handleCopyEmail(e);
-            }}
+            className="hover:text-teal-400 transition focus:outline-none"
+            aria-label="Copy email"
           >
-            <Mail aria-hidden="true" focusable="false" />
+            <Mail />
           </a>
           <a
             href="https://github.com/SG7504"
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:text-teal-400 transition focus:outline-none focus:ring-2 focus:ring-teal-400"
-            aria-label="Visit my GitHub profile"
+            className="hover:text-teal-400 transition"
+            aria-label="GitHub"
           >
-            <Github aria-hidden="true" focusable="false" />
+            <Github />
           </a>
           <a
             href="https://www.linkedin.com/in/sparshguha75/"
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:text-teal-400 transition focus:outline-none focus:ring-2 focus:ring-teal-400"
-            aria-label="Visit my LinkedIn profile"
+            className="hover:text-teal-400 transition"
+            aria-label="LinkedIn"
           >
-            <Linkedin aria-hidden="true" focusable="false" />
+            <Linkedin />
           </a>
         </nav>
-        {/* Email Copied Message */}
+
+        {/* Copied Toast */}
         {copied && (
           <div
-            className="mt-1 mb-2 px-4 py-1 rounded-lg bg-white text-zinc-900 font-semibold shadow-lg text-sm text-center transition"
+            className="mt-2 px-4 py-2 rounded-lg bg-white text-zinc-900 font-semibold shadow-lg text-sm"
             role="status"
             aria-live="polite"
-            style={{ minWidth: "120px", display: "inline-block" }}
           >
             Email copied!
           </div>
