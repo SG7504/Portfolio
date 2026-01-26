@@ -21,7 +21,7 @@ export default function Home() {
         
         {/* Hero */}
         <h1 className="text-4xl sm:text-5xl font-extrabold mb-4 text-center">
-          Hey, I’m <span className="text-teal-400">Sparsh</span>{" "}
+          Hi, I’m <span className="text-teal-400">Sparsh</span>{" "}
           <span role="img" aria-label="waving hand">👋</span>
         </h1>
 
