@@ -110,11 +110,7 @@ export default function Home() {
             Email copied!
           </div>
         )}
-        {/* Last Updated */}
-<p className="mt-6 text-xs text-zinc-500 text-center">
-  Last updated · January 2026
-</p>
-
+        >
       </main>
     </Layout>
   );
