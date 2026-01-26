@@ -1,74 +1,44 @@
 import { motion } from "framer-motion";
 
-export default function ExperienceCard({
-  role,
-  company,
-  date,
-  location,
-  points,
-  logo,
-  index,
-}) {
+export default function ExperienceCard({ company, role, duration, location, points, index }) {
   return (
     <motion.article
-      className="bg-zinc-800 p-6 rounded-2xl shadow-lg border border-zinc-700 transition-shadow group"
+      className="bg-zinc-800 p-6 rounded-2xl shadow-lg border border-zinc-700"
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
-
-      /* 🔥 SAME PREMIUM HOVER SYSTEM */
-      whileHover={{
-        scale: 1.015,
-        borderColor: "#14b8a6",
-        boxShadow:
-          "0 0 0 1px rgba(20,184,166,0.4), 0 10px 25px rgba(0,0,0,0.4)",
-      }}
-
-      transition={{ duration: 0.25, ease: "easeOut" }}
+      whileHover={{ scale: 1.03, borderColor: "#14b8a6" }}
+      transition={{ duration: 0.3, ease: "easeInOut" }}
       viewport={{ once: true }}
       role="article"
       aria-labelledby={`exp-company-${index}`}
       tabIndex={0}
     >
-      {/* Company Row */}
-      <div className="flex items-center gap-3 mb-2">
-        {logo && (
-          <div className="w-10 h-10 flex items-center justify-center rounded-lg bg-white/10">
-            <img
-              src={logo}
-              alt={`${company} logo`}
-              className="max-w-[28px] max-h-[28px] object-contain grayscale opacity-80 transition group-hover:grayscale-0 group-hover:opacity-100"
-              loading="lazy"
-            />
-          </div>
-        )}
-
-        <h3
-          id={`exp-company-${index}`}
-          className="text-xl font-semibold text-white"
-        >
-          {company}
-        </h3>
-      </div>
+      {/* Company */}
+      <h3
+        id={`exp-company-${index}`}
+        className="text-2xl font-semibold text-white mb-1"
+      >
+        {company}
+      </h3>
 
       {/* Role */}
       <p className="text-teal-400 font-medium mb-1">
         {role}
       </p>
 
-      {/* Meta */}
-      <div className="flex flex-wrap gap-4 text-sm text-zinc-400 mb-4">
-        <span>{date}</span>
-        <span>{location}</span>
-      </div>
+      {/* Duration + Location */}
+      <p className="text-sm text-zinc-400 mb-4">
+        {duration} {location && `• ${location}`}
+      </p>
 
-      {/* Points */}
+      {/* Bullet Points */}
       <ul className="space-y-2 text-zinc-300">
         {points.map((point, i) => (
           <li
             key={i}
-            className="flex items-start gap-2"
+            className="flex items-start gap-2 leading-relaxed"
           >
-            <span className="w-1.5 h-1.5 mt-2 rounded-full bg-teal-400 shrink-0" />
+            <span className="w-1.5 h-1.5 mt-2 rounded-full bg-teal-400 flex-shrink-0" />
             {point}
           </li>
         ))}
