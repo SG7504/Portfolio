@@ -96,5 +96,3 @@ Last updated · January 2026
 Thank you for visiting my portfolio repository!
 Feel free to explore the code and connect with me on LinkedIn or through my portfolio site.
 ---
-
-## 🔥 WHY THIS README IS NOW VERY STRONG
