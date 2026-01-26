@@ -15,7 +15,7 @@ export default function ExperienceCard({
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
 
-      /* 🔥 SAME PREMIUM HOVER SYSTEM AS PROJECTS / CERTS */
+      /* 🔥 SAME PREMIUM HOVER SYSTEM */
       whileHover={{
         scale: 1.015,
         borderColor: "#14b8a6",
@@ -29,15 +29,17 @@ export default function ExperienceCard({
       aria-labelledby={`exp-company-${index}`}
       tabIndex={0}
     >
-      {/* Company + Logo */}
+      {/* Company Row */}
       <div className="flex items-center gap-3 mb-2">
         {logo && (
-          <img
-            src={logo}
-            alt={`${company} logo`}
-            className="w-9 h-9 object-contain rounded-md bg-white p-1 grayscale opacity-80 transition group-hover:grayscale-0 group-hover:opacity-100"
-            loading="lazy"
-          />
+          <div className="w-10 h-10 flex items-center justify-center rounded-lg bg-white/10">
+            <img
+              src={logo}
+              alt={`${company} logo`}
+              className="max-w-[28px] max-h-[28px] object-contain grayscale opacity-80 transition group-hover:grayscale-0 group-hover:opacity-100"
+              loading="lazy"
+            />
+          </div>
         )}
 
         <h3
