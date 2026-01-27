@@ -5,19 +5,12 @@ import ExperienceCard from "../components/ExperienceCard";
 export default function ExperiencePage() {
   return (
     <Layout>
-      {/* EXACT SAME STRUCTURE AS PROJECTS — NO EXTRA WRAPPERS */}
-      <section className="min-h-screen px-6 py-12 max-w-6xl mx-auto text-white bg-transparent">
-        <h2 className="text-4xl font-bold mb-10 text-center">
-          Experience
-        </h2>
+      <section className="min-h-screen px-6 py-12 max-w-5xl mx-auto text-white">
+        <h2 className="text-4xl font-bold mb-10 text-center">Experience</h2>
 
-        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="space-y-8">
           {experience.map((exp, index) => (
-            <ExperienceCard
-              key={index}
-              index={index}
-              {...exp}
-            />
+            <ExperienceCard key={index} {...exp} />
           ))}
         </div>
       </section>
