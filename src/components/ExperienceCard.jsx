@@ -10,7 +10,7 @@ export default function ExperienceCard({
 }) {
   return (
     <motion.article
-      className="bg-zinc-800 p-6 rounded-2xl shadow-lg border border-zinc-700 relative transition-shadow"
+      className="bg-zinc-800 w-full p-6 rounded-2xl shadow-lg border border-zinc-700 relative transition-shadow"
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
 
