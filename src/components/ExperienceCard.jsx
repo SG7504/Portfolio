@@ -3,11 +3,18 @@ import { motion } from "framer-motion";
 export default function ExperienceCard({ company, role, duration, location, points, index }) {
   return (
     <motion.article
-      className="bg-zinc-800 p-6 rounded-2xl shadow-lg border border-zinc-700"
+      className="bg-zinc-800 p-6 rounded-2xl shadow-lg border border-zinc-700 relative transition-shadow"
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
-      whileHover={{ scale: 1.03, borderColor: "#14b8a6" }}
-      transition={{ duration: 0.3, ease: "easeInOut" }}
+
+      /* 🔥 SAME SUBTLE HOVER AS PROJECTS */
+      whileHover={{
+        scale: 1.015,
+        borderColor: "#14b8a6",
+        boxShadow: "0 0 0 1px rgba(20,184,166,0.4), 0 10px 25px rgba(0,0,0,0.4)",
+      }}
+
+      transition={{ duration: 0.25, ease: "easeOut" }}
       viewport={{ once: true }}
       role="article"
       aria-labelledby={`exp-company-${index}`}
@@ -31,18 +38,25 @@ export default function ExperienceCard({ company, role, duration, location, poin
         {duration} {location && `• ${location}`}
       </p>
 
-      {/* Bullet Points */}
-      <ul className="space-y-2 text-zinc-300">
-        {points.map((point, i) => (
-          <li
-            key={i}
-            className="flex items-start gap-2 leading-relaxed"
-          >
-            <span className="w-1.5 h-1.5 mt-2 rounded-full bg-teal-400 flex-shrink-0" />
-            {point}
-          </li>
-        ))}
-      </ul>
+      {/* Description Box (matches Projects layout) */}
+      <section className="bg-zinc-700/40 rounded-xl p-4">
+        <h4 className="text-lg font-semibold mb-3 text-teal-400">
+          Responsibilities & Contributions
+        </h4>
+
+        {/* Bullet Points */}
+        <ul className="space-y-3 text-zinc-300">
+          {points.map((point, i) => (
+            <li
+              key={i}
+              className="flex items-start gap-3 leading-relaxed"
+            >
+              <span className="w-1.5 h-1.5 mt-2 rounded-full bg-teal-400 flex-shrink-0" />
+              <span>{point}</span>
+            </li>
+          ))}
+        </ul>
+      </section>
     </motion.article>
   );
 }
