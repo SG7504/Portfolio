@@ -1,13 +1,20 @@
 import { motion } from "framer-motion";
 
-export default function ExperienceCard({ company, role, duration, location, points, index }) {
+export default function ExperienceCard({
+  company,
+  role,
+  duration,
+  location,
+  points,
+  index,
+}) {
   return (
     <motion.article
       className="bg-zinc-800 p-6 rounded-2xl shadow-lg border border-zinc-700 relative transition-shadow"
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
 
-      /* 🔥 SAME SUBTLE HOVER AS PROJECTS */
+      /* 🔥 SAME SUBTLE HOVER AS PROJECT CARD */
       whileHover={{
         scale: 1.015,
         borderColor: "#14b8a6",
@@ -38,13 +45,13 @@ export default function ExperienceCard({ company, role, duration, location, poin
         {duration} {location && `• ${location}`}
       </p>
 
-      {/* Description Box (matches Projects layout) */}
+      {/* Responsibilities Section (same style as project description box) */}
       <section className="bg-zinc-700/40 rounded-xl p-4">
         <h4 className="text-lg font-semibold mb-3 text-teal-400">
           Responsibilities & Contributions
         </h4>
 
-        {/* Bullet Points */}
+        {/* Bullet Points — fixed spacing + alignment */}
         <ul className="space-y-3 text-zinc-300">
           {points.map((point, i) => (
             <li
