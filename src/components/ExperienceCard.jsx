@@ -10,7 +10,7 @@ export default function ExperienceCard({
 }) {
   return (
     <motion.article
-      className="bg-zinc-800 p-6 rounded-2xl shadow-lg border border-zinc-700 relative transition-shadow col-span-full"
+      className="bg-zinc-800 p-6 rounded-2xl shadow-lg border border-zinc-700 relative transition-shadow"
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       whileHover={{
@@ -31,7 +31,7 @@ export default function ExperienceCard({
         {company}
       </h3>
 
-      {/* Inner Content Box — SAME AS PROJECT */}
+      {/* Inner Content Box — SAME STYLE AS PROJECT */}
       <section className="bg-zinc-700/40 rounded-xl p-4">
         {/* Role */}
         <p className="text-teal-400 font-medium mb-1">{role}</p>
@@ -49,7 +49,10 @@ export default function ExperienceCard({
         {/* Bullets */}
         <ul className="flex flex-col gap-2 text-zinc-300">
           {points.map((point, i) => (
-            <li key={i} className="flex items-start gap-3 leading-relaxed">
+            <li
+              key={i}
+              className="flex items-start gap-3 leading-relaxed"
+            >
               <span className="w-1.5 h-1.5 mt-2 rounded-full bg-teal-400 flex-shrink-0" />
               <span>{point}</span>
             </li>
