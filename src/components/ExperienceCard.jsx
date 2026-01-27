@@ -22,9 +22,8 @@ export default function ExperienceCard({
       viewport={{ once: true }}
       role="article"
       aria-labelledby={`exp-company-${index}`}
-      tabIndex={0}
     >
-      {/* Title (same as Project title style) */}
+      {/* Title */}
       <h3
         id={`exp-company-${index}`}
         className="text-2xl font-semibold mb-4 text-white"
@@ -32,31 +31,25 @@ export default function ExperienceCard({
         {company}
       </h3>
 
-      {/* Inner Content Box — MATCHES ProjectCard */}
+      {/* Inner Content Box — SAME AS PROJECT */}
       <section className="bg-zinc-700/40 rounded-xl p-4">
         {/* Role */}
-        <p className="text-teal-400 font-medium mb-1">
-          {role}
-        </p>
+        <p className="text-teal-400 font-medium mb-1">{role}</p>
 
-        {/* Duration + Location */}
+        {/* Date + Location */}
         <p className="text-sm text-zinc-400 mb-4">
           {date} {location && `• ${location}`}
         </p>
 
-        {/* Section Header — SAME spacing as ProjectCard */}
+        {/* Header */}
         <h4 className="text-lg font-semibold mb-2 text-teal-400">
           Responsibilities & Contributions
         </h4>
 
-        {/* Bullet Points — MATCHED to ProjectCard rhythm */}
+        {/* Bullets */}
         <ul className="flex flex-col gap-2 text-zinc-300">
           {points.map((point, i) => (
-            <li
-              key={i}
-              className="flex items-start gap-3 leading-relaxed"
-            >
-              {/* Bullet dot — SAME size/color as ProjectCard tech bullets */}
+            <li key={i} className="flex items-start gap-3 leading-relaxed">
               <span className="w-1.5 h-1.5 mt-2 rounded-full bg-teal-400 flex-shrink-0" />
               <span>{point}</span>
             </li>
