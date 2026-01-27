@@ -12,20 +12,14 @@ export default function ExperienceCard({ role, company, date, location, points }
       role="article"
       tabIndex={0}
     >
-      {/* Company */}
+      <h3 className="text-xl font-semibold text-white">{role}</h3>
+
       <p className="text-teal-400 font-medium mt-1">{company}</p>
 
-      {/* Role */}
-      <p className="text-sm text-zinc-400 mt-1">
-        {role}
-      </p>
-
-      {/* Date + Location */}
       <p className="text-sm text-zinc-400 mt-1">
         {date} • {location}
       </p>
 
-      {/* Points */}
       <ul className="mt-4 list-disc list-inside space-y-2 text-sm text-zinc-300">
         {points.map((point, index) => (
           <li key={index}>{point}</li>
