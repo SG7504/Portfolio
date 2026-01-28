@@ -2,47 +2,51 @@
 
 Welcome! This repository contains the source code for my personal portfolio website, built to showcase my projects, professional experience, skills, certifications, and education.
 
-🌐 **Live Site:**  
-https://sg7504.github.io/Portfolio/
-
+🌐 **Live Site:**
+[https://sg7504.github.io/Portfolio/](https://sg7504.github.io/Portfolio/)
+🕒 **Last Updated:** January 2026
 ---
 
 ## ✨ Overview
 
-This portfolio highlights my work in backend engineering, machine learning, and cybersecurity, along with real-world freelance and open-source experience.  
-It is designed to be clean, accessible, fast, and recruiter-friendly.
+This portfolio highlights my work in backend engineering, machine learning, and cybersecurity, along with real-world freelance and open-source experience.
+It is designed to be **clean, accessible, fast, and recruiter-friendly**.
 
 The site includes:
 
-- Featured projects with technical details and impact
-- Professional experience (freelance + open source)
-- Curated certifications hosted locally
-- Resume hosted directly in the repository
-- Fully responsive UI with accessibility considerations
+* Featured projects with technical details and measurable impact
+* Professional experience (freelance + open source)
+* Curated certifications hosted locally
+* Resume hosted directly in the repository
+* Fully responsive UI with strong accessibility support
 
 ---
 
 ## 🚀 Features
 
-- Modern responsive UI built with **React + Vite**
-- Styled using **Tailwind CSS**
-- Smooth animations with **Framer Motion**
-- Client-side routing with **React Router**
-- Local hosting of resume and certificates (no external drive links)
-- Accessibility-focused components (keyboard navigation, screen reader support)
-- Auto-deployment using **GitHub Actions** to GitHub Pages
+* Modern responsive UI built with **React + Vite**
+* Styled using **Tailwind CSS**
+* Smooth animations with **Framer Motion**
+* Client-side routing with **React Router**
+* Local hosting of resume and certificates (no external drive links)
+* **Accessibility-focused components**
+
+  * Keyboard navigation support
+  * Semantic HTML and ARIA attributes
+  * **Tested for compatibility with NVDA screen reader**
+* Auto-deployment using **GitHub Actions** to GitHub Pages
 
 ---
 
 ## 🛠️ Tech Stack
 
-- React 19  
-- Vite  
-- Tailwind CSS  
-- Framer Motion  
-- React Router DOM  
-- GitHub Pages (hosting & deployment)  
-- GitHub Actions (CI/CD)
+* React 19
+* Vite
+* Tailwind CSS
+* Framer Motion
+* React Router DOM
+* GitHub Pages (hosting & deployment)
+* GitHub Actions (CI/CD)
 
 ---
 
@@ -53,18 +57,33 @@ Clone the repository:
 ```bash
 git clone https://github.com/SG7504/Portfolio.git
 cd Portfolio
+```
+
 Install dependencies:
 
+```bash
 npm install
+```
+
 Run locally:
 
+```bash
 npm run dev
+```
+
 Build for production:
 
+```bash
 npm run build
-Deployment is handled automatically via GitHub Actions when changes are pushed to the main branch.
+```
 
-📂 Folder Structure
+Deployment is handled automatically via **GitHub Actions** when changes are pushed to the `main` branch.
+
+---
+
+## 📂 Folder Structure
+
+```
 Portfolio/
 ├── public/
 │   ├── resume.pdf
@@ -78,21 +97,28 @@ Portfolio/
 ├── package.json
 ├── vite.config.js
 └── ...
-👤 Author
-Sparsh Guha
+```
 
-Portfolio: https://sg7504.github.io/Portfolio/
+---
 
-LinkedIn: https://www.linkedin.com/in/sparshguha75/
+## 👤 Author
 
-GitHub: https://github.com/SG7504
+**Sparsh Guha**
 
-📄 License
+* Portfolio: [https://sg7504.github.io/Portfolio/](https://sg7504.github.io/Portfolio/)
+* LinkedIn: [https://www.linkedin.com/in/sparshguha75/](https://www.linkedin.com/in/sparshguha75/)
+* GitHub: [https://github.com/SG7504](https://github.com/SG7504)
+
+---
+
+## 📄 License
+
 All rights reserved.
-This portfolio website and its contents are the personal property of Sparsh Guha.
+This portfolio website and its contents are the personal property of **Sparsh Guha**.
 
-Last updated · January 2026
+---
 
 Thank you for visiting my portfolio repository!
 Feel free to explore the code and connect with me on LinkedIn or through my portfolio site.
+
 ---
