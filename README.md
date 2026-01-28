@@ -2,9 +2,11 @@
 
 Welcome! This repository contains the source code for my personal portfolio website, built to showcase my projects, professional experience, skills, certifications, and education.
 
-🌐 **Live Site:**
-[https://sg7504.github.io/Portfolio/](https://sg7504.github.io/Portfolio/)
+🌐 **Live Site:**  
+https://sg7504.github.io/Portfolio/
+
 🕒 **Last Updated:** January 2026
+
 ---
 
 ## ✨ Overview
